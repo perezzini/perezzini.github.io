@@ -32,7 +32,7 @@ jobs:
 
       - name: Install dependencies
         if: steps.cache-pipenv.outputs.cache-hit != 'true'
-        run: npm ci
+        run: npm ci --include=dev
 
       - name: Check CI
         run: npm run pre-commit
