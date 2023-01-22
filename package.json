@@ -1,0 +1,24 @@
+{
+  "name": "perezzini.github.io",
+  "version": "1.0.0",
+  "description": "Luciano Perezzini professional website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier --write .",
+    "pre-commit": "prettier --check ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perezzini/perezzini.github.io.git"
+  },
+  "author": "Luciano Perezzini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/perezzini/perezzini.github.io/issues"
+  },
+  "homepage": "https://github.com/perezzini/perezzini.github.io#readme",
+  "devDependencies": {
+    "prettier": "2.8.3"
+  }
+}
