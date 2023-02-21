@@ -9,3 +9,10 @@ body {
   max-width: 680px;
   padding: 0 15px;
 }
+
+/* Hide the profile image on mobile devices */
+@media (max-width: 767px) {
+  #profile-image {
+    display: none;
+  }
+}
