@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1,
-      shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="title" content="Luciano Perezzini" />
     <meta
       name="description"
@@ -16,10 +11,6 @@
     />
     <meta name="robots" content="index,follow" />
     <meta name="googlebot" content="index,follow" />
-
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Display&display=swap");
-    </style>
 
     <!-- Open Graph data -->
     <meta property="og:title" content="Luciano Perezzini" />
@@ -34,6 +25,7 @@
     />
     <meta property="og:description" content="Luciano Perezzini" />
 
+    <!-- Font Awesome -->
     <link
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
@@ -50,258 +42,209 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "UA-149415453-1");
     </script>
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
 
     <link href="style.css" rel="stylesheet" />
-
     <title>Luciano Perezzini</title>
   </head>
 
-  <body class="d-flex flex-column h-100">
-    <!-- Begin page content -->
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-2 d-flex align-items-center justify-content-center">
-          <img
-            src="imgs/profile-1.jpeg"
-            alt="Profile image"
-            class="rounded-circle img-fluid shadow"
-            id="profile-image"
-          />
-        </div>
-        <div class="col-md-10" style="position: relative; top: -15px">
-          <h1 class="mt-5">Luciano Perezzini</h1>
-          <p class="font-weight-bold">Licentiate in Computer Science</p>
-        </div>
-      </div>
+  <body>
+    <main>
+      <!-- Hero -->
+      <header class="hero">
+        <img
+          src="imgs/profile-1.jpeg"
+          alt="Luciano Perezzini"
+          class="avatar"
+        />
+        <h1>Luciano Perezzini</h1>
+        <p class="subtitle">Licentiate in Computer Science</p>
+      </header>
 
-      <p>
-        Passionate and product-oriented technologist experienced in both
-        contributing to and building start-ups from scratch. Skilled at working
-        at the intersection of software, design, and AI to create innovative
-        technology products and services that captivate diverse audiences. With
-        expertise in information retrieval and a focus on accelerating digital
-        transformation, Luciano has a proven track record of delivering
-        data-driven solutions and collaborating with talented, hardworking
-        teams. As a human-computer interaction enthusiast and designer at heart,
-        he thrives on creating seamless user experiences.
-      </p>
-
-      <p>
-        Degree obtained from
-        <a href="http://unr.edu.ar" target="_blank"
-          >Universidad Nacional de Rosario</a
-        >
-        (2019). Thesis titled
-        <i
-          ><a href="https://bit.ly/3n6JIUJ" target="_blank"
-            >Towards Legal Engineering decision support systems</a
-          ></i
-        >, developed at
-        <a href="https://www.cifasis-conicet.gov.ar/" target="_blank"
-          >CIFASIS-CONICET</a
-        >
-        ― design of state-of-the-art LegalTech recommender systems applying
-        Information Retrieval and Natural Language Processing techniques.
-      </p>
-
-      <div
-        class="btn-group btn-group-sm"
-        role="group"
-        aria-label="Basic
-        example"
-      >
-        <a
-          href="res/thesis.pdf"
-          class="btn btn-outline-primary"
-          role="button"
-          target="_blank"
-          ><i class="fa fa-file-pdf-o"></i> Thesis</a
-        >
-        <a
-          href="res/thesis-defense.pdf"
-          class="btn btn-outline-primary"
-          role="button"
-          target="_blank"
-          ><i class="fa fa-file-pdf-o"></i> Thesis Defense</a
-        >
-      </div>
-
-      <br />
-      <br />
-
-      <div class="container">
-        <p class="text-secondary">
-          Luciano mostly works on Information Retrieval areas to accelerate
-          digital transformation adoption of businesses.
+      <!-- Bio -->
+      <section>
+        <p>
+          Luciano Perezzini is a technologist and product builder with deep
+          expertise in artificial intelligence, information retrieval, and
+          software engineering. He has spent his career at the intersection of
+          software, design, and AI &#8212; contributing to and building
+          startups from the ground up, with a consistent focus on accelerating
+          digital transformation through data-driven products and services.
+          Bridging technical depth with design sensibility, he brings a
+          background in natural language processing and a genuine interest in
+          human-computer interaction to every product he works on, thriving in
+          ambitious, collaborative environments where rigorous engineering and
+          thoughtful user experience go hand in hand.
         </p>
+      </section>
 
-        <p class="text-secondary">
-          Since 2021, he has been leading Data & Cloud Computing areas at
+      <!-- Education -->
+      <section>
+        <p>
+          Degree obtained from
+          <a href="http://unr.edu.ar" target="_blank"
+            >Universidad Nacional de Rosario</a
+          >
+          (2019). Thesis titled
+          <em
+            ><a href="https://bit.ly/3n6JIUJ" target="_blank"
+              >Towards Legal Engineering decision support systems</a
+            ></em
+          >, developed at
+          <a href="https://www.cifasis-conicet.gov.ar/" target="_blank"
+            >CIFASIS-CONICET</a
+          >
+          &#8212; design of state-of-the-art LegalTech recommender systems
+          applying Information Retrieval and Natural Language Processing
+          techniques.
+        </p>
+        <div class="btn-row">
+          <a href="res/thesis.pdf" class="btn btn-outline" target="_blank">
+            <i class="fa fa-file-pdf-o"></i> Thesis
+          </a>
+          <a
+            href="res/thesis-defense.pdf"
+            class="btn btn-outline"
+            target="_blank"
+          >
+            <i class="fa fa-file-pdf-o"></i> Thesis Defense
+          </a>
+        </div>
+      </section>
+
+      <!-- Current work -->
+      <section>
+        <p class="secondary">
+          His work centers on applying information retrieval and machine
+          learning to drive digital transformation across industries. Since
+          2021, he has served as Chief Data Officer at
           <a
             href="https://deepagro.com"
             target="_blank"
-            rel="noopener
-            noreferrer"
+            rel="noopener noreferrer"
             >DeepAgro</a
-          >, where he serves as Chief Data Officer, responsible for expanding
-          daily Business Intelligence and Machine Learning operations.
+          >, where he leads the Data and Cloud Computing division, overseeing
+          the design and scaling of business intelligence and machine learning
+          operations.
         </p>
+      </section>
 
-        <p class="text-secondary">
-          For an extensive review of Luciano's professional experience, visit
-          his
+      <!-- CTAs -->
+      <section>
+        <div class="btn-row">
+          <a
+            href="https://bit.ly/perezzini-resume"
+            class="btn btn-primary"
+            target="_blank"
+          >
+            <i class="fa fa-cloud-download"></i> Download Resume
+          </a>
+          <a
+            href="https://cal.com/perezzini"
+            class="btn btn-outline"
+            target="_blank"
+          >
+            <i class="fa fa-calendar-o"></i> Schedule a Call
+          </a>
+          <a
+            href="mailto:lperezzini@gmail.com"
+            class="btn btn-outline"
+            target="_blank"
+          >
+            <i class="fa fa-envelope-o"></i> Send an E-mail
+          </a>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- Tags -->
+      <section>
+        <div class="tags">
+          <span class="tag">Artificial intelligence</span>
+          <span class="tag">Automation</span>
+          <span class="tag">Human-computer interaction</span>
+          <span class="tag">Information retrieval</span>
+          <span class="tag">Digital transformation</span>
+          <span class="tag">SaaS</span>
+          <span class="tag">Cloud computing</span>
+          <span class="tag">Natural language processing</span>
+        </div>
+      </section>
+
+      <!-- Social links -->
+      <section>
+        <div class="social-links">
           <a
             href="https://linkedin.com/in/perezzini"
             target="_blank"
-            rel="noopener noreferrer"
-            >LinkedIn profile</a
-          >.
-        </p>
-      </div>
-
-      <p>
-        <a
-          href="https://bit.ly/perezzini-resume"
-          class="btn btn-primary"
-          role="button"
-          target="_blank"
-          ><i class="fa fa-cloud-download"></i> Download Resume</a
-        >
-      </p>
-
-      <p>
-        <a
-          href="https://cal.com/perezzini"
-          class="btn btn-info btn-md"
-          role="button"
-          target="_blank"
-          ><i class="fa fa-calendar-o"></i> Schedule a Call</a
-        >
-
-        <a
-          href="mailto:lperezzini@gmail.com"
-          class="btn btn-info btn-md"
-          role="button"
-          target="_blank"
-          ><i class="fa fa-envelope-o"></i> Send an E-mail</a
-        >
-      </p>
-
-      <p>
-        <span class="badge badge-pill badge-secondary"
-          >Artificial intelligence</span
-        >
-        <span class="badge badge-pill badge-secondary">Automation</span>
-        <span class="badge badge-pill badge-secondary"
-          >Human-computer interaction</span
-        >
-        <span class="badge badge-pill badge-secondary"
-          >Information retrieval</span
-        >
-        <span class="badge badge-pill badge-secondary"
-          >Digital transformation</span
-        >
-        <span class="badge badge-pill badge-secondary">SaaS</span>
-        <span class="badge badge-pill badge-secondary">Cloud computing</span>
-        <span class="badge badge-pill badge-secondary"
-          >Natural language processing</span
-        >
-      </p>
-
-      <br />
-
-      <div class="btn-group" role="group">
-        <a
-          href="https://linkedin.com/in/perezzini"
-          target="_blank"
-          class="btn btn-outline-primary btn-md"
-          role="button"
-          ><i class="fa fa-linkedin-square"></i
-        ></a>
-        <a
-          href="https://github.com/perezzini"
-          target="_blank"
-          class="btn btn-outline-primary btn-md"
-          role="button"
-          ><i class="fa fa-github-square"></i
-        ></a>
-        <a
-          href="https://scholar.google.com/citations?user=Ad47r-MAAAAJ&hl=en"
-          target="_blank"
-          class="btn btn-outline-primary btn-md"
-          role="button"
-          ><i class="fa fa-graduation-cap"></i
-        ></a>
-        <a
-          href="https://twitter.com/perezzini"
-          target="_blank"
-          class="btn btn-outline-primary btn-md"
-          role="button"
-          ><i class="fa fa-twitter-square"></i
-        ></a>
-        <a
-          href="https://behance.net/lperezzini"
-          target="_blank"
-          class="btn btn-outline-primary btn-md"
-          role="button"
-          ><i class="fa fa-behance-square"></i
-        ></a>
-      </div>
-
-      <div class="container">
-        <div class="row">
-          <div class="mt-5">
-            <h4 class="text-info">Academic publications</h4>
-            <p class="font-weight-light">
-              • Perezzini, L., Casali, A., Deco, C.: Sistema de Soporte para la
-              Recuperación de Normativas en la Ingeniería Legal. In: XLIX
-              Simposio Argentino de Informática y Derecho (2020),
-              <a
-                href="https://49jaiio.sadio.org.ar/Anales/SID/Contribuciones"
-                target="_blank"
-                >SID 2020</a
-              >
-              <a
-                href="https://49jaiio.sadio.org.ar/pdfs/sid/SID-09.pdf"
-                target="_blank"
-                >[pdf]</a
-              >
-              <a href="https://youtu.be/q8MtVUa6-ZM?t=13143" target="_blank"
-                >[video]</a
-              >
-            </p>
-          </div>
-          <div class="col-sm"></div>
+            class="social-link"
+            aria-label="LinkedIn"
+          >
+            <i class="fa fa-linkedin-square"></i>
+          </a>
+          <a
+            href="https://github.com/perezzini"
+            target="_blank"
+            class="social-link"
+            aria-label="GitHub"
+          >
+            <i class="fa fa-github-square"></i>
+          </a>
+          <a
+            href="https://scholar.google.com/citations?user=Ad47r-MAAAAJ&hl=en"
+            target="_blank"
+            class="social-link"
+            aria-label="Google Scholar"
+          >
+            <i class="fa fa-graduation-cap"></i>
+          </a>
+          <a
+            href="https://twitter.com/perezzini"
+            target="_blank"
+            class="social-link"
+            aria-label="Twitter"
+          >
+            <i class="fa fa-twitter-square"></i>
+          </a>
+          <a
+            href="https://behance.net/lperezzini"
+            target="_blank"
+            class="social-link"
+            aria-label="Behance"
+          >
+            <i class="fa fa-behance-square"></i>
+          </a>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
+      <hr class="divider" />
+
+      <!-- Publications -->
+      <section>
+        <h2>Academic publications</h2>
+        <ul class="publications">
+          <li>
+            Perezzini, L., Casali, A., Deco, C.: Sistema de Soporte para la
+            Recuperación de Normativas en la Ingeniería Legal. In: XLIX
+            Simposio Argentino de Informática y Derecho (2020),
+            <a
+              href="https://49jaiio.sadio.org.ar/Anales/SID/Contribuciones"
+              target="_blank"
+              >SID 2020</a
+            >
+            <a
+              href="https://49jaiio.sadio.org.ar/pdfs/sid/SID-09.pdf"
+              target="_blank"
+              >[pdf]</a
+            >
+            <a href="https://youtu.be/q8MtVUa6-ZM?t=13143" target="_blank"
+              >[video]</a
+            >
+          </li>
+        </ul>
+      </section>
+    </main>
   </body>
 </html>
