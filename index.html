@@ -53,13 +53,17 @@
     <main>
       <!-- Hero -->
       <header class="hero">
-        <img src="imgs/profile-1.jpeg" alt="Luciano Perezzini" class="avatar" />
-        <h1>Luciano Perezzini</h1>
-        <p class="subtitle">Technologist &amp; Designer</p>
+        <img
+          src="imgs/profile-1.jpeg"
+          alt="Luciano Perezzini"
+          class="avatar hero-avatar"
+        />
+        <h1 class="hero-name">Luciano Perezzini</h1>
+        <p class="subtitle hero-subtitle">Technologist &amp; Designer</p>
       </header>
 
       <!-- Bio -->
-      <section>
+      <section class="reveal">
         <p>
           Luciano Perezzini builds data-driven products at the intersection of
           AI, information retrieval, and software engineering. He has led
@@ -72,23 +76,23 @@
       </section>
 
       <!-- Education -->
-      <section>
+      <section class="reveal">
         <p>
           Licentiate in Computer Science from
           <a href="http://unr.edu.ar" target="_blank"
             >Universidad Nacional de Rosario</a
           >
-          (2019). Thesis:
-          <em
-            ><a href="https://bit.ly/3n6JIUJ" target="_blank"
-              >Towards Legal Engineering decision support systems</a
-            ></em
-          >, developed at
+          (2019). Thesis conducted at
           <a href="https://www.cifasis-conicet.gov.ar/" target="_blank"
             >CIFASIS-CONICET</a
+          >:
+          <em
+            ><a href="https://bit.ly/3n6JIUJ" target="_blank"
+              >Towards Legal Engineering Decision Support Systems</a
+            ></em
           >
-          &#8212; state-of-the-art LegalTech recommender systems using
-          Information Retrieval and Natural Language Processing.
+          &#8212; LegalTech recommender systems built on Information Retrieval
+          and Natural Language Processing.
         </p>
         <div class="btn-row">
           <a href="res/thesis.pdf" class="btn btn-outline" target="_blank">
@@ -105,7 +109,7 @@
       </section>
 
       <!-- Current work -->
-      <section>
+      <section class="reveal">
         <p class="secondary">
           Since 2021, he has served as Chief Data Officer at
           <a
@@ -120,7 +124,7 @@
       </section>
 
       <!-- CTAs -->
-      <section>
+      <section class="reveal">
         <div class="btn-row">
           <a
             href="https://bit.ly/perezzini-resume"
@@ -146,10 +150,10 @@
         </div>
       </section>
 
-      <hr class="divider" />
+      <hr class="divider reveal" />
 
       <!-- Tags -->
-      <section>
+      <section class="reveal">
         <div class="tags">
           <span class="tag">Artificial intelligence</span>
           <span class="tag">Automation</span>
@@ -163,7 +167,7 @@
       </section>
 
       <!-- Social links -->
-      <section>
+      <section class="reveal">
         <div class="social-links">
           <a
             href="https://linkedin.com/in/perezzini"
@@ -208,11 +212,11 @@
         </div>
       </section>
 
-      <hr class="divider" />
+      <hr class="divider reveal" />
 
       <!-- Publications -->
-      <section>
-        <h2>Academic publications</h2>
+      <section class="reveal">
+        <h2 class="reveal">Academic publications</h2>
         <ul class="publications">
           <li>
             Perezzini, L., Casali, A., Deco, C.: Sistema de Soporte para la
@@ -235,5 +239,22 @@
         </ul>
       </section>
     </main>
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("is-visible");
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+    </script>
   </body>
 </html>
