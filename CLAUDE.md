@@ -23,3 +23,9 @@ Single-page static portfolio site (`index.html`) deployed to GitHub Pages. No fr
 - **Analytics**: Google Analytics via GTM (UA-149415453-1)
 
 CI runs Prettier format check on PRs and pushes to `master`/`develop`.
+
+## Git
+
+Do not mention Claude Code or any AI tool in commit messages, PR descriptions, or any git-related output.
+
+Always commit atomically — one logical change per commit.
