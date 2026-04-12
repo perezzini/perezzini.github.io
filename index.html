@@ -50,6 +50,18 @@
   </head>
 
   <body>
+    <!-- Language toggle -->
+    <button
+      class="lang-toggle"
+      id="langToggle"
+      data-lang="en"
+      aria-label="Switch language"
+    >
+      <span class="lang-opt" data-lang="en">EN</span>
+      <span class="lang-opt" data-lang="es">ES</span>
+      <span class="lang-thumb" aria-hidden="true"></span>
+    </button>
+
     <main>
       <!-- Hero -->
       <header class="hero">
@@ -59,12 +71,14 @@
           class="avatar hero-avatar"
         />
         <h1 class="hero-name">Luciano Perezzini</h1>
-        <p class="subtitle hero-subtitle">Technologist &amp; Designer</p>
+        <p class="subtitle hero-subtitle" data-i18n="subtitle">
+          Technologist &amp; Designer
+        </p>
       </header>
 
       <!-- Bio -->
       <section class="reveal">
-        <p>
+        <p data-i18n="bio">
           Luciano builds data-driven products at the intersection of AI,
           information retrieval, and software engineering. He has led technical
           and product work at early-stage startups from zero to scale, with a
@@ -77,7 +91,7 @@
 
       <!-- Education -->
       <section class="reveal">
-        <p>
+        <p data-i18n="education">
           Licentiate in Computer Science from
           <a href="http://unr.edu.ar" target="_blank"
             >Universidad Nacional de Rosario</a
@@ -95,13 +109,19 @@
           and Natural Language Processing.
         </p>
         <div class="btn-row">
-          <a href="res/thesis.pdf" class="btn btn-outline" target="_blank">
+          <a
+            href="res/thesis.pdf"
+            class="btn btn-outline"
+            target="_blank"
+            data-i18n="thesis-btn"
+          >
             <i class="fa fa-file-pdf-o"></i> Thesis
           </a>
           <a
             href="res/thesis-defense.pdf"
             class="btn btn-outline"
             target="_blank"
+            data-i18n="thesis-defense-btn"
           >
             <i class="fa fa-file-pdf-o"></i> Thesis Defense
           </a>
@@ -110,7 +130,7 @@
 
       <!-- Current work -->
       <section class="reveal">
-        <p class="secondary">
+        <p class="secondary" data-i18n="current-work">
           Since 2021, he has served as Chief Data Officer at
           <a
             href="https://deepagro.com"
@@ -130,6 +150,7 @@
             href="https://bit.ly/perezzini-resume"
             class="btn btn-primary"
             target="_blank"
+            data-i18n="resume-btn"
           >
             <i class="fa fa-cloud-download"></i> Download Resume
           </a>
@@ -137,6 +158,7 @@
             href="https://cal.com/perezzini"
             class="btn btn-outline"
             target="_blank"
+            data-i18n="call-btn"
           >
             <i class="fa fa-calendar-o"></i> Schedule a Call
           </a>
@@ -144,6 +166,7 @@
             href="mailto:lperezzini@gmail.com"
             class="btn btn-outline"
             target="_blank"
+            data-i18n="email-btn"
           >
             <i class="fa fa-envelope-o"></i> Send an E-mail
           </a>
@@ -200,7 +223,9 @@
 
       <!-- Publications -->
       <section class="reveal">
-        <h2 class="reveal">Academic publications</h2>
+        <h2 class="reveal" data-i18n="publications-heading">
+          Academic publications
+        </h2>
         <ul class="publications">
           <li>
             Perezzini, L., Casali, A., Deco, C.: Sistema de Soporte para la
@@ -224,6 +249,7 @@
       </section>
     </main>
     <script>
+      // Scroll reveal
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((e) => {
@@ -239,6 +265,70 @@
       document
         .querySelectorAll(".reveal")
         .forEach((el) => observer.observe(el));
+
+      // Language toggle
+      const translations = {
+        en: {
+          subtitle: "Technologist &amp; Designer",
+          bio: "Luciano builds data-driven products at the intersection of AI, information retrieval, and software engineering. He has led technical and product work at early-stage startups from zero to scale, with a focus on turning complex data into decision-ready systems. His background spans natural language processing, machine learning, and applied research &#8212; grounded in the belief that great engineering and great user experience are inseparable.",
+          education:
+            'Licentiate in Computer Science from <a href="http://unr.edu.ar" target="_blank">Universidad Nacional de Rosario</a> (2019). Thesis conducted at <a href="https://www.cifasis-conicet.gov.ar/" target="_blank">CIFASIS-CONICET</a>: <em><a href="https://bit.ly/3n6JIUJ" target="_blank">Towards Legal Engineering Decision Support Systems</a></em> &#8212; LegalTech recommender systems built on Information Retrieval and Natural Language Processing.',
+          "thesis-btn": '<i class="fa fa-file-pdf-o"></i> Thesis',
+          "thesis-defense-btn":
+            '<i class="fa fa-file-pdf-o"></i> Thesis Defense',
+          "current-work":
+            'Since 2021, he has served as Chief Data Officer at <a href="https://deepagro.com" target="_blank" rel="noopener noreferrer">DeepAgro</a>, leading the Data and Cloud Computing division &#8212; driving the design, deployment, and scaling of machine learning systems and business intelligence platforms across the agri-tech sector.',
+          "resume-btn": '<i class="fa fa-cloud-download"></i> Download Resume',
+          "call-btn": '<i class="fa fa-calendar-o"></i> Schedule a Call',
+          "email-btn": '<i class="fa fa-envelope-o"></i> Send an E-mail',
+          "publications-heading": "Academic publications",
+        },
+        es: {
+          subtitle: "Tecnólogo y Diseñador",
+          bio: "Luciano construye productos basados en datos en la intersección de la IA, la recuperación de información y la ingeniería de software. Ha liderado trabajo técnico y de producto en startups en etapas tempranas desde cero hasta escala, con foco en convertir datos complejos en sistemas listos para la toma de decisiones. Su formación abarca el procesamiento del lenguaje natural, el aprendizaje automático y la investigación aplicada &#8212; sustentada en la convicción de que la gran ingeniería y la gran experiencia de usuario son inseparables.",
+          education:
+            'Licenciado en Ciencias de la Computación por la <a href="http://unr.edu.ar" target="_blank">Universidad Nacional de Rosario</a> (2019). Tesis realizada en <a href="https://www.cifasis-conicet.gov.ar/" target="_blank">CIFASIS-CONICET</a>: <em><a href="https://bit.ly/3n6JIUJ" target="_blank">Towards Legal Engineering Decision Support Systems</a></em> &#8212; Sistemas de recomendación LegalTech basados en Recuperación de Información y Procesamiento del Lenguaje Natural.',
+          "thesis-btn": '<i class="fa fa-file-pdf-o"></i> Tesis',
+          "thesis-defense-btn":
+            '<i class="fa fa-file-pdf-o"></i> Defensa de Tesis',
+          "current-work":
+            'Desde 2021, se desempeña como Chief Data Officer en <a href="https://deepagro.com" target="_blank" rel="noopener noreferrer">DeepAgro</a>, liderando la división de Datos y Computación en la Nube &#8212; impulsando el diseño, despliegue y escalado de sistemas de aprendizaje automático y plataformas de inteligencia de negocios en el sector agro-tech.',
+          "resume-btn": '<i class="fa fa-cloud-download"></i> Descargar CV',
+          "call-btn": '<i class="fa fa-calendar-o"></i> Agendar una Llamada',
+          "email-btn": '<i class="fa fa-envelope-o"></i> Enviar un E-mail',
+          "publications-heading": "Publicaciones académicas",
+        },
+      };
+
+      const toggle = document.getElementById("langToggle");
+      let currentLang = "en";
+
+      function applyLanguage(lang) {
+        // Update toggle state
+        toggle.dataset.lang = lang;
+        toggle.querySelectorAll(".lang-opt").forEach((opt) => {
+          opt.classList.toggle("active", opt.dataset.lang === lang);
+        });
+
+        // Update translatable elements
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.dataset.i18n;
+          if (translations[lang][key] !== undefined) {
+            el.innerHTML = translations[lang][key];
+          }
+        });
+
+        // Update document language
+        document.documentElement.lang = lang;
+      }
+
+      toggle.addEventListener("click", () => {
+        currentLang = currentLang === "en" ? "es" : "en";
+        applyLanguage(currentLang);
+      });
+
+      // Set initial active state
+      applyLanguage("en");
     </script>
   </body>
 </html>
