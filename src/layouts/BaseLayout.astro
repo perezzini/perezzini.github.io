@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css'
-import LangToggle from '../components/LangToggle.astro'
 
 interface Props {
   title?: string
@@ -64,9 +63,6 @@ const {
     <title>{title}</title>
   </head>
   <body>
-    <div class="toggles-container">
-      <LangToggle />
-    </div>
     <slot />
   </body>
 </html>
