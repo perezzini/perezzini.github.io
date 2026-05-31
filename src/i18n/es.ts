@@ -1,7 +1,7 @@
 import type { TranslationKey } from './en'
 
 export const es: Record<TranslationKey, string> = {
-  subtitle: 'Tecnólogo y Diseñador',
+  subtitle: 'Tecnólogo',
   bio: 'Luciano construye productos basados en datos en la intersección de la IA, la recuperación de información y la ingeniería de software. Ha liderado trabajo técnico y de producto en startups en etapas tempranas desde cero hasta escala, con foco en convertir datos complejos en sistemas listos para la toma de decisiones. Su formación abarca el procesamiento del lenguaje natural, el aprendizaje automático y la investigación aplicada — sustentada en la convicción de que la gran ingeniería y la gran experiencia de usuario son inseparables.',
   education:
     'Licenciado en Ciencias de la Computación por la <a href="http://unr.edu.ar" target="_blank">Universidad Nacional de Rosario</a> (2019). Tesis realizada en <a href="https://www.cifasis-conicet.gov.ar/" target="_blank">CIFASIS-CONICET</a>: <em><a href="https://bit.ly/3n6JIUJ" target="_blank">Towards Legal Engineering Decision Support Systems</a></em> — Sistemas de recomendación LegalTech basados en Recuperación de Información y Procesamiento del Lenguaje Natural.',
