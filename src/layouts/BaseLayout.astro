@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css'
 import LangToggle from '../components/LangToggle.astro'
-import DarkModeToggle from '../components/DarkModeToggle.astro'
 
 interface Props {
   title?: string
@@ -69,7 +68,6 @@ const {
   </head>
   <body>
     <div class="toggles-container">
-      <DarkModeToggle />
       <LangToggle />
     </div>
     <slot />
