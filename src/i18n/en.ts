@@ -9,7 +9,7 @@ export const en = {
     'Since 2021, he has served as Chief Data Officer at <a href="https://deepagro.com" target="_blank" rel="noopener noreferrer">DeepAgro</a>, leading the Data and Cloud Computing division — driving the design, deployment, and scaling of machine learning systems and business intelligence platforms across the agri-tech sector.',
   'resume-btn': 'Resume',
   'call-btn': 'Schedule a Call',
-  'email-btn': 'Contact Me',
+  'email-btn': 'Contact',
   'publications-heading': 'Academic publications',
 } as const
 

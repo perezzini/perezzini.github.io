@@ -11,6 +11,6 @@ export const es: Record<TranslationKey, string> = {
     'Desde 2021, se desempeña como Chief Data Officer en <a href="https://deepagro.com" target="_blank" rel="noopener noreferrer">DeepAgro</a>, liderando la división de Datos y Computación en la Nube — impulsando el diseño, despliegue y escalado de sistemas de aprendizaje automático y plataformas de inteligencia de negocios en el sector agro-tech.',
   'resume-btn': 'CV',
   'call-btn': 'Agendar una Llamada',
-  'email-btn': 'Contactarme',
+  'email-btn': 'Contacto',
   'publications-heading': 'Publicaciones académicas',
 }
