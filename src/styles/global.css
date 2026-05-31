@@ -22,6 +22,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: var(--font-display);
+    font-weight: 700;
     background-color: #ffffff;
     color: #01377d;
     line-height: 1.7;
