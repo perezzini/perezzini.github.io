@@ -9,8 +9,8 @@ export const es: Record<TranslationKey, string> = {
   'thesis-defense-btn': 'Defensa de Tesis',
   'current-work':
     'Desde 2021, se desempeña como Chief Data Officer en <a href="https://deepagro.com" target="_blank" rel="noopener noreferrer">DeepAgro</a>, liderando la división de Datos y Computación en la Nube — impulsando el diseño, despliegue y escalado de sistemas de aprendizaje automático y plataformas de inteligencia de negocios en el sector agro-tech.',
-  'resume-btn': 'Descargar CV',
+  'resume-btn': 'CV',
   'call-btn': 'Agendar una Llamada',
-  'email-btn': 'Enviar un E-mail',
+  'email-btn': 'Contactarme',
   'publications-heading': 'Publicaciones académicas',
 }
