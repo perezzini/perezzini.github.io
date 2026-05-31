@@ -4,9 +4,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-apple-blue: #0071e3;
-  --color-apple-blue-dark: #2997ff;
-  --color-apple-dark: #1d1d1f;
+  --color-apple-blue: #01377d;
+  --color-apple-blue-dark: #5b9bd5;
+  --color-apple-dark: #01377d;
   --color-apple-light: #f5f5f7;
   --color-apple-gray: #6e6e73;
   --color-apple-gray-dark: #86868b;
@@ -14,19 +14,16 @@
   --color-apple-divider-dark: #3a3a3c;
   --color-apple-tag-bg: #f5f5f7;
   --color-apple-tag-bg-dark: #1c1c1e;
-  --font-apple:
-    -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial,
-    sans-serif;
+  --font-display: 'Prata', Georgia, serif;
 }
 
 @layer base {
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: var(--font-apple);
-    font-weight: bold;
+    font-family: var(--font-display);
     background-color: #ffffff;
-    color: #1d1d1f;
+    color: #01377d;
     line-height: 1.7;
   }
 
@@ -36,7 +33,7 @@
   }
 
   a {
-    color: #0071e3;
+    color: #01377d;
     text-decoration: none;
   }
 
@@ -47,7 +44,7 @@
   p {
     font-size: 17px;
     line-height: 1.7;
-    color: #1d1d1f;
+    color: #01377d;
     margin-bottom: 16px;
     text-align: center;
   }
@@ -67,9 +64,12 @@
   h2 {
     font-size: 21px;
     font-weight: 600;
-    color: #1d1d1f;
     letter-spacing: -0.2px;
     margin-bottom: 16px;
+    background: linear-gradient(135deg, #01377d 0%, #1a6abf 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   /* Dark mode base */
@@ -92,17 +92,17 @@
   }
 
   .dark a {
-    color: #2997ff;
+    color: #5b9bd5;
   }
 
   .dark .btn-primary {
-    background-color: #2997ff;
-    border-color: #2997ff;
+    background-color: #5b9bd5;
+    border-color: #5b9bd5;
   }
 
   .dark .btn-outline {
-    color: #2997ff;
-    border-color: #2997ff;
+    color: #5b9bd5;
+    border-color: #5b9bd5;
   }
 
   .dark .social-link {
@@ -147,15 +147,15 @@
   }
 
   .btn-primary {
-    background-color: #0071e3;
+    background-color: #01377d;
     color: #ffffff;
-    border-color: #0071e3;
+    border-color: #01377d;
   }
 
   .btn-outline {
     background-color: transparent;
-    color: #0071e3;
-    border-color: #0071e3;
+    color: #01377d;
+    border-color: #01377d;
   }
 
   .social-links {
@@ -172,7 +172,7 @@
   }
 
   .social-link:hover {
-    color: #1d1d1f;
+    color: #01377d;
     text-decoration: none;
   }
 
@@ -184,7 +184,7 @@
   .publications li {
     font-size: 15px;
     line-height: 1.65;
-    color: #1d1d1f;
+    color: #01377d;
     padding-left: 20px;
     position: relative;
   }
@@ -234,7 +234,7 @@
   }
 
   .lang-opt.active {
-    color: #1d1d1f;
+    color: #01377d;
   }
 
   .lang-thumb {
@@ -278,7 +278,7 @@
 
   .dark-toggle:hover {
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.13);
-    color: #1d1d1f;
+    color: #01377d;
   }
 
   /* Show moon in light mode, sun in dark mode */
@@ -347,18 +347,18 @@
   .blog-preview-title {
     font-size: 17px;
     font-weight: 600;
-    color: #1d1d1f;
+    color: #01377d;
     margin-bottom: 4px;
     letter-spacing: -0.1px;
   }
 
   .blog-preview-title a {
-    color: #1d1d1f;
+    color: #01377d;
     text-decoration: none;
   }
 
   .blog-preview-title a:hover {
-    color: #0071e3;
+    color: #01377d;
     text-decoration: none;
   }
 
@@ -383,7 +383,7 @@
   }
 
   .dark .blog-preview-title a:hover {
-    color: #2997ff;
+    color: #5b9bd5;
   }
 
   .dark .blog-preview-desc {
@@ -394,7 +394,7 @@
   .blog-back-link {
     display: inline-block;
     font-size: 15px;
-    color: #0071e3;
+    color: #01377d;
     text-decoration: none;
     margin-bottom: 32px;
   }
@@ -404,7 +404,7 @@
   }
 
   .dark .blog-back-link {
-    color: #2997ff;
+    color: #5b9bd5;
   }
 
   .blog-post-header {
@@ -416,7 +416,7 @@
     font-weight: 700;
     letter-spacing: -0.5px;
     line-height: 1.15;
-    color: #1d1d1f;
+    color: #01377d;
     margin-bottom: 12px;
     text-align: left;
   }
@@ -441,7 +441,7 @@
 
   .tag {
     background-color: #f5f5f7;
-    color: #1d1d1f;
+    color: #01377d;
     font-size: 13px;
     font-weight: 500;
     padding: 5px 12px;
@@ -458,7 +458,7 @@
     font-size: 32px;
     font-weight: 700;
     letter-spacing: -0.5px;
-    color: #1d1d1f;
+    color: #01377d;
     margin-bottom: 40px;
     text-align: left;
   }
@@ -469,6 +469,13 @@
 }
 
 @layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #01377d 0%, #1a6abf 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     @keyframes fade-up {
       from {
