@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content'
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Hero from '../components/Hero.astro'
 import Bio from '../components/Bio.astro'
@@ -8,6 +9,11 @@ import CTAButtons from '../components/CTAButtons.astro'
 import SocialLinks from '../components/SocialLinks.astro'
 import Publications from '../components/Publications.astro'
 import ScrollReveal from '../components/ScrollReveal.astro'
+import BlogPreview from '../components/BlogPreview.astro'
+
+const latestPosts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3)
 ---
 
 <BaseLayout>
@@ -22,6 +28,35 @@ import ScrollReveal from '../components/ScrollReveal.astro'
     <SocialLinks />
     <hr class="reveal divider border-0 border-t my-10" />
     <Publications />
+    {
+      latestPosts.length > 0 && (
+        <>
+          <hr class="reveal divider border-0 border-t my-10" />
+          <section class="reveal">
+            <h2>
+              <a href="/blog" style="color: inherit; text-decoration: none;">
+                Writing
+              </a>
+            </h2>
+            {latestPosts.map((post) => (
+              <BlogPreview
+                title={post.data.title}
+                description={post.data.description}
+                pubDate={post.data.pubDate}
+                slug={post.slug}
+              />
+            ))}
+            <a
+              href="/blog"
+              class="blog-back-link"
+              style="margin-top: 8px; margin-bottom: 0;"
+            >
+              All posts →
+            </a>
+          </section>
+        </>
+      )
+    }
   </main>
   <ScrollReveal />
 </BaseLayout>

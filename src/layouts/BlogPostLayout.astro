@@ -1,0 +1,45 @@
+---
+import BaseLayout from './BaseLayout.astro'
+
+interface Props {
+  title: string
+  description: string
+  pubDate: Date
+  tags?: string[]
+}
+
+const { title, description, pubDate, tags } = Astro.props
+
+const formattedDate = pubDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+})
+---
+
+<BaseLayout title={title} description={description}>
+  <main
+    class="max-w-[640px] mx-auto px-6 py-[72px] max-sm:px-5 max-sm:py-[40px]"
+  >
+    <a href="/blog" class="blog-back-link">← Writing</a>
+    <header class="blog-post-header">
+      <time datetime={pubDate.toISOString()} class="blog-preview-date"
+        >{formattedDate}</time
+      >
+      <h1 class="blog-post-title">{title}</h1>
+      {
+        tags && tags.length > 0 && (
+          <div class="tags">
+            {tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        )
+      }
+    </header>
+    <div class="prose dark:prose-invert max-w-none">
+      <slot />
+    </div>
+    <a href="/blog" class="blog-back-link blog-back-bottom">← Writing</a>
+  </main>
+</BaseLayout>
