@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css'
+import LangToggle from '../components/LangToggle.astro'
 
 interface Props {
   title?: string
@@ -26,26 +27,36 @@ const {
     <meta property="og:title" content="Luciano Perezzini" />
     <meta property="og:type" content="profile" />
     <meta property="og:url" content="https://perezzini.github.io/" />
-    <meta property="og:image" content="https://perezzini.github.io/imgs/unr-2.jpg" />
+    <meta
+      property="og:image"
+      content="https://perezzini.github.io/imgs/unr-2.jpg"
+    />
     <meta property="og:description" content="Luciano Perezzini" />
 
     <!-- Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=UA-149415453-1"></script>
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-149415453-1"></script>
     <script is:inline>
-      window.dataLayer = window.dataLayer || [];
+      window.dataLayer = window.dataLayer || []
       function gtag() {
-        dataLayer.push(arguments);
+        dataLayer.push(arguments)
       }
-      gtag('js', new Date());
-      gtag('config', 'UA-149415453-1');
+      gtag('js', new Date())
+      gtag('config', 'UA-149415453-1')
     </script>
 
     <title>{title}</title>
   </head>
   <body>
+    <LangToggle />
     <slot />
   </body>
 </html>
