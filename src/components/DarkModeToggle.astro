@@ -1,0 +1,18 @@
+<button id="darkToggle" aria-label="Toggle dark mode" class="dark-toggle">
+  <i class="fa-solid fa-moon dark-icon-moon"></i>
+  <i class="fa-solid fa-sun dark-icon-sun"></i>
+</button>
+
+<script>
+  const toggle = document.getElementById('darkToggle')
+  const html = document.documentElement
+
+  function applyTheme(isDark) {
+    html.classList.toggle('dark', isDark)
+    localStorage.setItem('theme', isDark ? 'dark' : 'light')
+  }
+
+  toggle.addEventListener('click', () => {
+    applyTheme(!html.classList.contains('dark'))
+  })
+</script>

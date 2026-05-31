@@ -69,6 +69,59 @@
     letter-spacing: -0.2px;
     margin-bottom: 16px;
   }
+
+  /* Dark mode base */
+  .dark body,
+  .dark main {
+    background-color: #000000;
+    color: #f5f5f7;
+  }
+
+  .dark p {
+    color: #f5f5f7;
+  }
+
+  .dark p.secondary {
+    color: #86868b;
+  }
+
+  .dark h2 {
+    color: #f5f5f7;
+  }
+
+  .dark a {
+    color: #2997ff;
+  }
+
+  .dark .btn-primary {
+    background-color: #2997ff;
+    border-color: #2997ff;
+  }
+
+  .dark .btn-outline {
+    color: #2997ff;
+    border-color: #2997ff;
+  }
+
+  .dark .social-link {
+    color: #86868b;
+  }
+
+  .dark .social-link:hover {
+    color: #f5f5f7;
+  }
+
+  .dark hr.divider {
+    border-color: #3a3a3c;
+  }
+
+  .dark .publications li {
+    color: #f5f5f7;
+  }
+
+  .dark .publications li::before {
+    color: #86868b;
+  }
 }
 
 @layer components {
@@ -145,9 +198,6 @@
 
   /* Language toggle */
   .lang-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
     display: flex;
     align-items: center;
     background: rgba(255, 255, 255, 0.82);
@@ -158,7 +208,6 @@
     padding: 3px;
     cursor: pointer;
     user-select: none;
-    z-index: 1000;
     font-family: inherit;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
     transition: box-shadow 150ms ease;
@@ -201,6 +250,82 @@
 
   .lang-toggle[data-lang='es'] .lang-thumb {
     transform: translateX(100%);
+  }
+
+  /* Dark mode toggle */
+  .dark-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 15px;
+    color: #6e6e73;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 150ms ease, color 150ms ease;
+    font-family: inherit;
+  }
+
+  .dark-toggle:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.13);
+    color: #1d1d1f;
+  }
+
+  /* Show moon in light mode, sun in dark mode */
+  .dark-icon-sun {
+    display: none;
+  }
+  .dark .dark-icon-moon {
+    display: none;
+  }
+  .dark .dark-icon-sun {
+    display: block;
+  }
+
+  /* Toggles container (fixed, top-right) */
+  .toggles-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 1000;
+  }
+
+  /* Dark mode overrides for the lang toggle */
+  .dark .lang-toggle {
+    background: rgba(28, 28, 30, 0.82);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .dark .lang-opt {
+    color: #86868b;
+  }
+
+  .dark .lang-opt.active {
+    color: #f5f5f7;
+  }
+
+  .dark .lang-thumb {
+    background: #3a3a3c;
+  }
+
+  /* Dark mode overrides for the dark toggle itself */
+  .dark .dark-toggle {
+    background: rgba(28, 28, 30, 0.82);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #86868b;
+  }
+
+  .dark .dark-toggle:hover {
+    color: #f5f5f7;
   }
 }
 
