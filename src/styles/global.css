@@ -30,6 +30,116 @@
     background-color: #000000;
     color: #f5f5f7;
   }
+
+  a {
+    color: #0071e3;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #1d1d1f;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  p.secondary {
+    color: #6e6e73;
+  }
+
+  section {
+    margin-bottom: 32px;
+  }
+
+  h2 {
+    font-size: 21px;
+    font-weight: 600;
+    color: #1d1d1f;
+    letter-spacing: -0.2px;
+    margin-bottom: 16px;
+  }
+}
+
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 20px;
+    border-radius: 980px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    line-height: 1;
+  }
+
+  .btn:hover {
+    text-decoration: none;
+  }
+
+  .btn-primary {
+    background-color: #0071e3;
+    color: #ffffff;
+    border-color: #0071e3;
+  }
+
+  .btn-outline {
+    background-color: transparent;
+    color: #0071e3;
+    border-color: #0071e3;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .social-link {
+    color: #6e6e73;
+    font-size: 24px;
+    text-decoration: none;
+    line-height: 1;
+  }
+
+  .social-link:hover {
+    color: #1d1d1f;
+    text-decoration: none;
+  }
+
+  .publications {
+    list-style: none;
+    padding: 0;
+  }
+
+  .publications li {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #1d1d1f;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .publications li::before {
+    content: "·";
+    position: absolute;
+    left: 4px;
+    color: #6e6e73;
+    font-size: 20px;
+    line-height: 1.2;
+  }
 }
 
 @layer utilities {
@@ -43,6 +153,23 @@
         opacity: 1;
         transform: none;
       }
+    }
+
+    .hero-avatar {
+      opacity: 0;
+      animation: fade-up 400ms ease both;
+    }
+
+    .hero-name {
+      opacity: 0;
+      animation: fade-up 400ms ease both;
+      animation-delay: 80ms;
+    }
+
+    .hero-subtitle {
+      opacity: 0;
+      animation: fade-up 400ms ease both;
+      animation-delay: 160ms;
     }
 
     .reveal {

@@ -1,9 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import Hero from '../components/Hero.astro'
+import Bio from '../components/Bio.astro'
+import Education from '../components/Education.astro'
+import CurrentWork from '../components/CurrentWork.astro'
+import CTAButtons from '../components/CTAButtons.astro'
+import SocialLinks from '../components/SocialLinks.astro'
+import Publications from '../components/Publications.astro'
+import ScrollReveal from '../components/ScrollReveal.astro'
 ---
 
 <BaseLayout>
-  <main class="max-w-[640px] mx-auto px-6 py-[72px]">
-    <h1 class="text-4xl font-bold text-apple-dark dark:text-apple-light">Hello Astro</h1>
+  <main class="max-w-[640px] mx-auto px-6 py-[72px] max-sm:px-5 max-sm:py-[40px]">
+    <Hero />
+    <Bio />
+    <Education />
+    <CurrentWork />
+    <CTAButtons />
+    <SocialLinks />
+    <hr class="reveal divider border-0 border-t border-[#d2d2d7] my-10" />
+    <Publications />
   </main>
+  <ScrollReveal />
 </BaseLayout>
