@@ -1,0 +1,49 @@
+---
+import { en } from '../i18n/en'
+import { es } from '../i18n/es'
+
+const translations = { en, es }
+---
+
+<button
+  class="lang-toggle"
+  id="langToggle"
+  data-lang="en"
+  aria-label="Switch language"
+>
+  <span class="lang-opt" data-lang="en">EN</span>
+  <span class="lang-opt" data-lang="es">ES</span>
+  <span class="lang-thumb" aria-hidden="true"></span>
+</button>
+
+<script define:vars={{ translations }}>
+  const toggle = document.getElementById('langToggle')
+
+  function applyLanguage(lang) {
+    toggle.dataset.lang = lang
+    toggle.querySelectorAll('.lang-opt').forEach((opt) => {
+      opt.classList.toggle('active', opt.dataset.lang === lang)
+    })
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const key = el.dataset.i18n
+      if (translations[lang][key] !== undefined) {
+        el.innerHTML = translations[lang][key]
+      }
+    })
+    document.documentElement.lang = lang
+    localStorage.setItem('lang', lang)
+  }
+
+  // Restore saved language on page load
+  const saved = localStorage.getItem('lang')
+  if (saved === 'en' || saved === 'es') {
+    applyLanguage(saved)
+  } else {
+    applyLanguage('en')
+  }
+
+  toggle.addEventListener('click', () => {
+    const next = toggle.dataset.lang === 'en' ? 'es' : 'en'
+    applyLanguage(next)
+  })
+</script>
