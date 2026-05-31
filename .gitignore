@@ -1,3 +1,6 @@
+# Astro generated files
+.astro/
+
 # Logs
 logs
 *.log
