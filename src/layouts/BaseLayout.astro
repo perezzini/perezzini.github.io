@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css'
+import Navbar from '../components/Navbar.astro'
 
 interface Props {
   title?: string
@@ -15,17 +16,6 @@ const {
 <!doctype html>
 <html lang="en">
   <head>
-    <script is:inline>
-      ;(function () {
-        const stored = localStorage.getItem('theme')
-        const prefersDark = window.matchMedia(
-          '(prefers-color-scheme: dark)'
-        ).matches
-        if (stored === 'dark' || (!stored && prefersDark)) {
-          document.documentElement.classList.add('dark')
-        }
-      })()
-    </script>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -75,6 +65,7 @@ const {
     <title>{title}</title>
   </head>
   <body>
-<slot />
+    <Navbar />
+    <slot />
   </body>
 </html>
