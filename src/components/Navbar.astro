@@ -1,8 +1,9 @@
 ---
 const { pathname } = Astro.url
-const isHome = pathname === '/'
-const isEssays = pathname.startsWith('/essays')
-const isPubs = pathname === '/publications'
+const p = pathname.replace(/\/$/, '') || '/'
+const isHome = p === '/'
+const isEssays = p.startsWith('/essays')
+const isPubs = p === '/publications'
 ---
 
 <nav class="site-nav">
