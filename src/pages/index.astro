@@ -6,13 +6,12 @@ import Education from '../components/Education.astro'
 import CurrentWork from '../components/CurrentWork.astro'
 import CTAButtons from '../components/CTAButtons.astro'
 import SocialLinks from '../components/SocialLinks.astro'
-import Publications from '../components/Publications.astro'
 import ScrollReveal from '../components/ScrollReveal.astro'
 ---
 
 <BaseLayout>
   <main
-    class="max-w-[640px] mx-auto px-6 py-[72px] max-sm:px-5 max-sm:py-[40px]"
+    class="home max-w-[640px] mx-auto px-6 pt-[112px] pb-[72px] max-sm:px-5 max-sm:pt-[80px] max-sm:pb-[40px]"
   >
     <Hero />
     <Bio />
@@ -20,8 +19,6 @@ import ScrollReveal from '../components/ScrollReveal.astro'
     <CurrentWork />
     <CTAButtons />
     <SocialLinks />
-    <hr class="reveal divider border-0 border-t my-10" />
-    <Publications />
   </main>
   <ScrollReveal />
 </BaseLayout>
