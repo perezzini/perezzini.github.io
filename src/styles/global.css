@@ -117,50 +117,6 @@
     }
   }
 
-  /* Language toggle */
-  .lang-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    padding: 4px;
-    background: rgba(240, 237, 232, 0.85);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(1, 55, 125, 0.12);
-    border-radius: 980px;
-    box-shadow: 0 1px 8px rgba(1, 55, 125, 0.08);
-    z-index: 1000;
-    cursor: pointer;
-  }
-
-  .lang-opt {
-    padding: 6px 12px;
-    border-radius: 980px;
-    font-size: 12px;
-    font-weight: 600;
-    color: #01377d;
-    letter-spacing: 0.03em;
-    transition:
-      background 150ms ease,
-      color 150ms ease;
-  }
-
-  .lang-opt.active {
-    background: #01377d;
-    color: #ffffff;
-  }
-
-  @media (max-width: 480px) {
-    .lang-toggle {
-      top: auto;
-      bottom: 24px;
-      right: 20px;
-    }
-  }
-
   .btn {
     display: inline-flex;
     align-items: center;
