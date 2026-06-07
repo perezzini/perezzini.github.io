@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css'
 import Navbar from '../components/Navbar.astro'
-import LangToggle from '../components/LangToggle.astro'
 
 interface Props {
   title?: string
@@ -67,7 +66,6 @@ const {
   </head>
   <body>
     <Navbar />
-    <LangToggle />
     <slot />
   </body>
 </html>
