@@ -1,0 +1,44 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Neutral Grays" subtitle="Apple gray for secondary text; hairline divider" -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        background: var(--surface-page);
+        display: flex;
+        gap: 14px;
+      }
+      .swatch {
+        flex: 1;
+        height: 110px;
+        border-radius: var(--radius-sm);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 12px;
+        box-sizing: border-box;
+        border: 1px solid var(--border-hairline);
+      }
+      .name {
+        font-size: 14px;
+        line-height: 1.3;
+      }
+      .hex {
+        font-size: 12px;
+        opacity: 0.85;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="swatch" style="background: var(--gray)">
+      <span class="name" style="color:#fff">Gray</span><span class="hex" style="color:#fff">#6E6E73 · --gray</span>
+    </div>
+    <div class="swatch" style="background: var(--divider)">
+      <span class="name" style="color:var(--navy)">Divider</span><span class="hex" style="color:var(--navy)">#D2D2D7 · --divider</span>
+    </div>
+  </body>
+</html>

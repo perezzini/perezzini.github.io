@@ -1,8 +1,12 @@
 # Astro generated files
 .astro/
 
-# Local tooling
-.claude/
+# Local tooling — track perezzini-design skill, ignore everything else
+.claude/*
+!.claude/skills/
+.claude/skills/*
+!.claude/skills/perezzini-design/
+!.claude/skills/perezzini-design/**
 
 # Logs
 logs

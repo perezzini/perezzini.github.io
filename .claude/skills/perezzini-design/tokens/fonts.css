@@ -1,0 +1,13 @@
+/* ============================================================
+   FONTS — Perezzini Design System
+   Prata — a high-contrast Didone serif (Google Fonts, single
+   400 master). Bundled locally so the system is self-contained.
+   ============================================================ */
+
+@font-face {
+  font-family: 'Prata';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/Prata-Regular.ttf') format('truetype');
+}
