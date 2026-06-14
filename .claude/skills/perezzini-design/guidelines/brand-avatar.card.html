@@ -1,0 +1,43 @@
+<!-- @dsCard group="Brand" viewport="700x200" name="Avatar Ring" subtitle="Circular portrait with paper gap + thin navy halo" -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 28px 36px;
+        background: var(--surface-page);
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+      .avatar {
+        width: 112px;
+        height: 112px;
+        border-radius: var(--radius-full);
+        object-fit: cover;
+        display: block;
+        box-shadow: var(--ring-avatar);
+      }
+      .note {
+        font-size: var(--text-meta);
+        color: var(--text-secondary);
+        max-width: 320px;
+        line-height: 1.6;
+      }
+      .note b {
+        color: var(--text-primary);
+        font-weight: var(--weight-regular);
+      }
+    </style>
+  </head>
+  <body>
+    <img class="avatar" src="../assets/profile-1.jpeg" alt="Luciano Perezzini" />
+    <div class="note">
+      <b>--ring-avatar</b> &#8212; a 4px paper-colored gap then a 6px navy halo,
+      lifting the portrait off the warm page without a hard border.
+    </div>
+  </body>
+</html>

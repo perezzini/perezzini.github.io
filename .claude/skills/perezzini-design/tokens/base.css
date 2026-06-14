@@ -1,0 +1,78 @@
+/* ============================================================
+   BASE — Perezzini Design System
+   Element defaults that establish the editorial voice: Prata
+   on warm paper, navy ink, generous 1.7 line-height, and the
+   signature navy→bright text gradient utility.
+   ============================================================ */
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-display);
+  font-weight: var(--weight-regular);
+  background-color: var(--surface-page);
+  color: var(--text-primary);
+  line-height: var(--leading-body);
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+p {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* On the home column, running copy is navy ink; .secondary stays gray */
+.home p {
+  color: var(--text-primary);
+}
+.home p.secondary,
+p.secondary {
+  color: var(--text-secondary);
+}
+
+h1 {
+  font-size: var(--text-hero);
+  font-weight: var(--weight-regular);
+  letter-spacing: var(--tracking-hero);
+  line-height: var(--leading-tight);
+  color: var(--text-primary);
+}
+
+h2 {
+  font-size: var(--text-heading);
+  font-weight: var(--weight-regular);
+  letter-spacing: var(--tracking-heading);
+  margin-bottom: var(--space-5);
+  color: var(--text-primary);
+}
+
+em {
+  font-style: italic;
+}
+
+/* --- Utilities ------------------------------------------- */
+.text-gradient {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-bright) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

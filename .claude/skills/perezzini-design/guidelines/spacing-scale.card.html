@@ -1,0 +1,48 @@
+<!-- @dsCard group="Spacing" viewport="700x170" name="Spacing Scale" subtitle="4px base rhythm; 640px content column" -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 24px 32px;
+        background: var(--surface-page);
+      }
+      .scale {
+        display: flex;
+        align-items: flex-end;
+        gap: 14px;
+      }
+      .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+      .bar {
+        background: var(--navy);
+        width: 16px;
+        border-radius: 3px;
+      }
+      .label {
+        font-size: 11px;
+        color: var(--text-secondary);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scale">
+      <div class="item"><div class="bar" style="height:4px"></div><span class="label">4</span></div>
+      <div class="item"><div class="bar" style="height:8px"></div><span class="label">8</span></div>
+      <div class="item"><div class="bar" style="height:12px"></div><span class="label">12</span></div>
+      <div class="item"><div class="bar" style="height:16px"></div><span class="label">16</span></div>
+      <div class="item"><div class="bar" style="height:20px"></div><span class="label">20</span></div>
+      <div class="item"><div class="bar" style="height:24px"></div><span class="label">24</span></div>
+      <div class="item"><div class="bar" style="height:32px"></div><span class="label">32</span></div>
+      <div class="item"><div class="bar" style="height:48px"></div><span class="label">48</span></div>
+      <div class="item"><div class="bar" style="height:72px"></div><span class="label">72</span></div>
+    </div>
+  </body>
+</html>

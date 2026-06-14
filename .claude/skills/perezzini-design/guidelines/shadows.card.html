@@ -1,0 +1,48 @@
+<!-- @dsCard group="Spacing" viewport="700x150" name="Shadows" subtitle="Whisper-soft, always navy-tinted — never neutral black" -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 28px 32px;
+        background: var(--surface-page);
+        display: flex;
+        align-items: center;
+        gap: 32px;
+      }
+      .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+      .box {
+        width: 120px;
+        height: 66px;
+        background: var(--white);
+        border-radius: var(--radius-card);
+      }
+      .label {
+        font-size: 12px;
+        color: var(--text-secondary);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="item">
+      <div class="box" style="box-shadow: var(--shadow-glass)"></div>
+      <span class="label">Glass · nav</span>
+    </div>
+    <div class="item">
+      <div class="box" style="box-shadow: var(--shadow-card)"></div>
+      <span class="label">Card</span>
+    </div>
+    <div class="item">
+      <div class="box" style="box-shadow: var(--shadow-lift)"></div>
+      <span class="label">Lift</span>
+    </div>
+  </body>
+</html>

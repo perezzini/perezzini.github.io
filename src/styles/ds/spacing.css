@@ -1,0 +1,45 @@
+/* ============================================================
+   SPACING, RADII & SHADOWS — Perezzini Design System
+   Generous vertical rhythm, fully-pill radii on interactive
+   chrome, and a whisper-soft navy-tinted shadow system.
+   ============================================================ */
+
+:root {
+  /* --- Spacing scale (px) -------------------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-18: 72px;
+  --space-28: 112px; /* page top padding below floating nav     */
+
+  /* --- Semantic spacing ---------------------------------- */
+  --gap-section: var(--space-8); /* between page sections        */
+  --gap-inline: var(--space-2); /* between buttons / chips       */
+  --pad-button-y: 9px;
+  --pad-button-x: 20px;
+  --content-max: 640px; /* the column width of every page        */
+
+  /* --- Radii --------------------------------------------- */
+  --radius-pill: 980px; /* nav, buttons, tags — fully rounded    */
+  --radius-card: 18px;
+  --radius-sm: 10px;
+  --radius-full: 50%; /* avatars                                 */
+
+  /* --- Shadows (cool navy tint, never neutral black) ----- */
+  --shadow-glass: 0 1px 8px var(--navy-a08); /* floating nav     */
+  --shadow-card: 0 2px 16px var(--navy-a08);
+  --shadow-lift: 0 8px 32px var(--navy-a12);
+  /* avatar ring: paper gap then a thin navy halo */
+  --ring-avatar: 0 0 0 4px var(--paper), 0 0 0 6px var(--navy);
+
+  /* --- Motion -------------------------------------------- */
+  --ease-out: ease; /* @kind other */
+  --dur-fast: 150ms; /* @kind other */
+  --dur-base: 400ms; /* @kind other */
+}
