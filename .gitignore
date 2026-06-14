@@ -1,6 +1,9 @@
 # Astro generated files
 .astro/
 
+# Local tooling
+.claude/
+
 # Logs
 logs
 *.log
