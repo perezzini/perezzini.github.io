@@ -31,6 +31,7 @@ Astro 5 portfolio site deployed to GitHub Pages via GitHub Actions. Static outpu
 ## Design system
 
 **All visual changes must follow the `perezzini-design` skill** at `.claude/skills/perezzini-design/`. Read `readme.md` there before touching any styles, components, or layout. Quick rules:
+
 - One typeface: Prata 400 only — no bold, no other weights.
 - All colors via tokens (`var(--navy)`, `var(--gray)`, `var(--paper)`, etc.) — never raw hex.
 - Pill chrome everywhere (`var(--radius-pill)`). Navy-tinted shadows only.
