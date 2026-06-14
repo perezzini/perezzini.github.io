@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Portfolio Page" description="Luciano Perezzini's single-column portfolio — hero, bio, CTAs, social, on warm paper" -->
+<helmet>
+  <script src="./ds-base.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</helmet>
+
+<div style="min-height: 100vh; background: var(--surface-page); font-family: var(--font-display); color: var(--text-primary);">
+
+  <nav style="position: fixed; top: 20px; left: 50%; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 2px; padding: 4px; background: var(--surface-glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--border-glass); border-radius: var(--radius-pill); box-shadow: var(--shadow-glass); z-index: 1000; white-space: nowrap;">
+    <a href="#" style="padding: 6px 16px; border-radius: var(--radius-pill); font-size: var(--text-meta); text-decoration: none; color: var(--text-on-navy); background: var(--navy);">Home</a>
+    <a href="#" style="padding: 6px 16px; border-radius: var(--radius-pill); font-size: var(--text-meta); text-decoration: none; color: var(--navy); background: transparent;">Essays</a>
+    <a href="#" style="padding: 6px 16px; border-radius: var(--radius-pill); font-size: var(--text-meta); text-decoration: none; color: var(--navy); background: transparent;">Academic publications</a>
+  </nav>
+
+  <main style="max-width: var(--content-max); margin: 0 auto; padding: 112px 24px 72px; text-align: center;">
+
+    <header style="margin-bottom: 48px;">
+      <img src="../../assets/profile-1.jpeg" alt="Luciano Perezzini" style="width: 112px; height: 112px; border-radius: var(--radius-full); object-fit: cover; display: block; margin: 0 auto; box-shadow: var(--ring-avatar);" />
+      <h1 style="margin: 20px 0 8px; font-size: var(--text-hero); font-weight: var(--weight-regular); letter-spacing: var(--tracking-hero); line-height: var(--leading-tight); color: var(--text-primary);">Luciano Perezzini</h1>
+      <p style="font-size: var(--text-subtitle); color: var(--text-subtitle); margin: 0;">Technologist</p>
+    </header>
+
+    <section style="margin-bottom: 32px;">
+      <p style="font-size: var(--text-body); line-height: var(--leading-body); color: var(--text-primary); margin: 0;">Luciano builds data-driven products at the intersection of AI, information retrieval, and software engineering. His background spans natural language processing, machine learning, and applied research &mdash; grounded in the belief that great engineering and great user experience are inseparable.</p>
+    </section>
+
+    <section style="margin-bottom: 32px;">
+      <div style="display: flex; justify-content: center; gap: 8px;">
+        <x-import component-from-global-scope="PerezziniDesignSystem_33c6f1.Button" variant="primary" icon="fa-solid fa-cloud-arrow-down" href="#" hint-size="120px,40px">Resume</x-import>
+        <x-import component-from-global-scope="PerezziniDesignSystem_33c6f1.Button" variant="outline" icon="fa-regular fa-envelope" href="#" hint-size="140px,40px">Contact Me</x-import>
+      </div>
+    </section>
+
+    <section>
+      <div style="display: flex; justify-content: center; gap: 20px; font-size: 24px;">
+        <a href="#" aria-label="LinkedIn" style="color: var(--gray); text-decoration: none; line-height: 1;"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="GitHub" style="color: var(--gray); text-decoration: none; line-height: 1;"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </section>
+
+  </main>
+</div>
+</x-dc>
+</body>
+</html>

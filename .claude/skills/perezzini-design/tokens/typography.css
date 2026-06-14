@@ -1,0 +1,42 @@
+/* ============================================================
+   TYPOGRAPHY — Perezzini Design System
+   One voice: Prata, a high-contrast Didone serif, set across
+   the ENTIRE interface — headings, body, and UI chrome alike.
+   This single-typeface discipline is the brand's signature.
+   ============================================================ */
+
+:root {
+  /* --- Family -------------------------------------------- */
+  --font-display: 'Prata', Georgia, 'Times New Roman', serif;
+  --font-ui: 'Prata', Georgia, serif; /* same face for chrome   */
+
+  /* --- Weight (Prata ships a single 400 master) ---------- */
+  --weight-regular: 400;
+
+  /* --- Type scale (px, matches the live site) ------------ */
+  --text-hero: 36px; /* h1 — name / page hero                  */
+  --text-title: 32px; /* blog post & list titles               */
+  --text-heading: 28px; /* h2 section headings                 */
+  --text-subtitle: 19px; /* hero subhead                       */
+  --text-body: 17px; /* paragraphs, primary running text       */
+  --text-button: 15px; /* buttons, body links                  */
+  --text-meta: 13px; /* nav links, tags, dates, captions       */
+
+  /* --- Line heights -------------------------------------- */
+  --leading-tight: 1.1; /* hero name                           */
+  --leading-snug: 1.15; /* large titles                        */
+  --leading-body: 1.7; /* running paragraphs                   */
+  --leading-list: 1.65; /* publication / dense lists           */
+
+  /* --- Letter spacing (Didone wants gentle negatives) ---- */
+  --tracking-hero: -0.5px;
+  --tracking-heading: -0.3px;
+  --tracking-tight: -0.1px;
+  --tracking-normal: 0;
+
+  /* ============================================================
+     SEMANTIC ALIASES
+     ============================================================ */
+  --font-body: var(--font-display);
+  --font-heading: var(--font-display);
+}

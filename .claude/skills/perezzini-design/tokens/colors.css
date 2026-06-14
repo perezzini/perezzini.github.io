@@ -1,0 +1,48 @@
+/* ============================================================
+   COLORS — Perezzini Design System
+   An editorial, Apple-inspired palette: deep navy ink on warm
+   cream paper, with a restrained set of cool neutral grays.
+   ============================================================ */
+
+:root {
+  /* --- Brand / ink --------------------------------------- */
+  --navy: #01377d; /* primary ink — text, links, fills        */
+  --navy-bright: #1a6abf; /* gradient terminus, accents        */
+  --navy-subtitle: #4a6f94; /* muted navy for subheads         */
+
+  /* --- Paper / surfaces ---------------------------------- */
+  --paper: #f0ede8; /* warm cream page background              */
+  --surface-light: #f5f5f7; /* Apple light — tags, tag bg      */
+  --white: #ffffff;
+
+  /* --- Neutral grays ------------------------------------- */
+  --gray: #6e6e73; /* Apple gray — secondary body text         */
+  --divider: #d2d2d7; /* hairline dividers, borders            */
+
+  /* --- Navy alpha tints (hovers, rings, glass) ----------- */
+  --navy-a04: rgba(1, 55, 125, 0.04);
+  --navy-a06: rgba(1, 55, 125, 0.06);
+  --navy-a08: rgba(1, 55, 125, 0.08);
+  --navy-a12: rgba(1, 55, 125, 0.12);
+  --paper-a85: rgba(240, 237, 232, 0.85); /* glass nav fill    */
+
+  /* ============================================================
+     SEMANTIC ALIASES — prefer these in components
+     ============================================================ */
+  --text-primary: var(--navy); /* headings, primary copy       */
+  --text-secondary: var(--gray); /* supporting / muted copy     */
+  --text-subtitle: var(--navy-subtitle); /* hero subhead        */
+  --text-on-navy: var(--white); /* text on filled navy          */
+  --link: var(--navy);
+
+  --surface-page: var(--paper); /* the page itself              */
+  --surface-card: var(--white);
+  --surface-subtle: var(--surface-light); /* tags, chips, wells  */
+  --surface-glass: var(--paper-a85); /* floating nav             */
+
+  --border-hairline: var(--divider);
+  --border-ink: var(--navy);
+  --border-glass: var(--navy-a12);
+
+  --hover-tint: var(--navy-a06); /* nav-link / ghost hover bg    */
+}

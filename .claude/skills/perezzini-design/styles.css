@@ -1,0 +1,11 @@
+/* ============================================================
+   Perezzini Design System — global entry point
+   Consumers link THIS file. It is an @import manifest only;
+   every token, font, and base rule lives in the files below.
+   ============================================================ */
+
+@import './tokens/fonts.css';
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
+@import './tokens/base.css';

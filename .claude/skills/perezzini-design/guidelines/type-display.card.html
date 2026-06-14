@@ -1,0 +1,48 @@
+<!-- @dsCard group="Type" viewport="700x230" name="Prata — Display" subtitle="Hero & section headings, the editorial voice" -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 28px 32px;
+        background: var(--surface-page);
+      }
+      .row {
+        display: flex;
+        align-items: baseline;
+        gap: 18px;
+        border-bottom: 1px solid var(--border-hairline);
+        padding: 12px 0;
+      }
+      .row:last-child {
+        border-bottom: none;
+      }
+      .spec {
+        font-size: 12px;
+        color: var(--text-secondary);
+        min-width: 120px;
+      }
+      .sample {
+        color: var(--text-primary);
+        line-height: 1.1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <span class="spec">Hero · 36 / -0.5</span>
+      <span class="sample" style="font-size: var(--text-hero)">Luciano Perezzini</span>
+    </div>
+    <div class="row">
+      <span class="spec">Title · 32 / -0.5</span>
+      <span class="sample" style="font-size: var(--text-title)">Towards Legal Engineering</span>
+    </div>
+    <div class="row">
+      <span class="spec">Heading · 28 / -0.3</span>
+      <span class="sample" style="font-size: var(--text-heading)">Academic publications</span>
+    </div>
+  </body>
+</html>
