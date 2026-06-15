@@ -7,7 +7,7 @@ import React from 'react'
 export function SocialIcon({ icon, href, label, size = 24, ...rest }) {
   const [hover, setHover] = React.useState(false)
   const style = {
-    color: hover ? 'var(--navy)' : 'var(--gray)',
+    color: hover ? 'var(--social-fg-hover)' : 'var(--social-fg)',
     fontSize: size,
     textDecoration: 'none',
     lineHeight: 1,

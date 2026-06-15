@@ -1,0 +1,209 @@
+/* ============================================================
+   DARK THEME — Perezzini Design System
+   "Warm Midnight": the palette inverted. Brand navy #01377d
+   becomes the canvas; warm off-white becomes the ink. Stays
+   monochrome — the accent flips to cream, never a new hue.
+
+   Activation (both):
+     • Auto:    system prefers-color-scheme: dark
+     • Manual:  <html data-theme="dark"> forces dark anywhere;
+                <html data-theme="light"> forces light even on a
+                dark system. The explicit [data-theme] blocks are
+                ordered AFTER the @media rule so a user choice wins
+                over the system preference by source order.
+
+   Dark values live once as --dk-* on :root; the mappings below
+   reference them, so there is no value drift. Every selector
+   here is a registered token scope (:root or [data-theme=…]).
+   ============================================================ */
+
+:root {
+  /* surfaces */
+  --dk-surface-page: #01377d; /* brand navy — the canvas         */
+  --dk-surface-card: #0f4a98; /* raised navy (cards, wells)      */
+  --dk-surface-subtle: #0a3f86; /* tags / chips                  */
+  --dk-surface-glass: rgba(
+    15,
+    74,
+    152,
+    0.62
+  ); /* raised frosted navy — reads as a distinct capsule on the canvas */
+
+  /* text */
+  --dk-text-primary: #f4f1ec; /* warm off-white — echoes paper   */
+  --dk-text-secondary: #b9c6db; /* muted blue-gray               */
+  --dk-text-subtitle: #a8c1e0;
+  --dk-text-on-navy: #f4f1ec; /* text on a raised navy fill      */
+  --dk-link: #86b6f0; /* sky — links glow on the dark canvas     */
+
+  /* borders */
+  --dk-border-hairline: rgba(244, 241, 236, 0.16);
+  --dk-border-ink: #f4f1ec;
+  --dk-border-glass: rgba(
+    244,
+    241,
+    236,
+    0.32
+  ); /* cream hairline — visible on navy */
+
+  /* hover */
+  --dk-hover-tint: rgba(244, 241, 236, 0.1);
+
+  /* component tokens — monochrome invert (cream accent) */
+  --dk-btn-primary-bg: #f4f1ec;
+  --dk-btn-primary-fg: #01377d;
+  --dk-btn-outline-fg: #f4f1ec;
+  --dk-btn-outline-border: rgba(244, 241, 236, 0.45);
+  --dk-nav-active-bg: #f4f1ec;
+  --dk-nav-active-fg: #01377d;
+  --dk-nav-link-fg: #f4f1ec;
+  --dk-tag-fg: #d7e3f5;
+  --dk-social-fg: #b9c6db;
+  --dk-social-fg-hover: #f4f1ec;
+
+  /* ring + shadows */
+  --dk-ring-avatar: 0 0 0 4px #01377d, 0 0 0 6px #f4f1ec;
+  --dk-shadow-glass: 0 1px 14px rgba(0, 0, 0, 0.45);
+  --dk-shadow-card: 0 2px 22px rgba(0, 0, 0, 0.45);
+  --dk-shadow-lift: 0 12px 44px rgba(0, 0, 0, 0.55);
+}
+
+/* ---- Auto: follow the system preference ------------------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface-page: var(--dk-surface-page);
+    --surface-card: var(--dk-surface-card);
+    --surface-subtle: var(--dk-surface-subtle);
+    --surface-glass: var(--dk-surface-glass);
+
+    --text-primary: var(--dk-text-primary);
+    --text-secondary: var(--dk-text-secondary);
+    --text-subtitle: var(--dk-text-subtitle);
+    --text-on-navy: var(--dk-text-on-navy);
+    --link: var(--dk-link);
+
+    --border-hairline: var(--dk-border-hairline);
+    --border-ink: var(--dk-border-ink);
+    --border-glass: var(--dk-border-glass);
+
+    --hover-tint: var(--dk-hover-tint);
+
+    --btn-primary-bg: var(--dk-btn-primary-bg);
+    --btn-primary-fg: var(--dk-btn-primary-fg);
+    --btn-outline-fg: var(--dk-btn-outline-fg);
+    --btn-outline-border: var(--dk-btn-outline-border);
+    --nav-active-bg: var(--dk-nav-active-bg);
+    --nav-active-fg: var(--dk-nav-active-fg);
+    --nav-link-fg: var(--dk-nav-link-fg);
+    --tag-fg: var(--dk-tag-fg);
+    --social-fg: var(--dk-social-fg);
+    --social-fg-hover: var(--dk-social-fg-hover);
+
+    --ring-avatar: var(--dk-ring-avatar);
+    --shadow-glass: var(--dk-shadow-glass);
+    --shadow-card: var(--dk-shadow-card);
+    --shadow-lift: var(--dk-shadow-lift);
+
+    color-scheme: dark;
+  }
+}
+
+/* ---- Manual light: re-assert the light palette ------------ */
+/* Ordered after the @media rule so an explicit light choice
+   overrides a dark system preference (equal specificity, later
+   in source wins). Also scopes a nested light pane on any page. */
+[data-theme='light'] {
+  --surface-page: var(--paper);
+  --surface-card: var(--white);
+  --surface-subtle: var(--surface-light);
+  --surface-glass: var(--paper-a85);
+
+  --text-primary: var(--navy);
+  --text-secondary: var(--gray);
+  --text-subtitle: var(--navy-subtitle);
+  --text-on-navy: var(--white);
+  --link: var(--navy);
+
+  --border-hairline: var(--divider);
+  --border-ink: var(--navy);
+  --border-glass: var(--navy-a12);
+
+  --hover-tint: var(--navy-a06);
+
+  --btn-primary-bg: var(--navy);
+  --btn-primary-fg: var(--white);
+  --btn-outline-fg: var(--navy);
+  --btn-outline-border: var(--navy);
+  --nav-active-bg: var(--navy);
+  --nav-active-fg: var(--white);
+  --nav-link-fg: var(--navy);
+  --tag-fg: var(--navy);
+  --social-fg: var(--gray);
+  --social-fg-hover: var(--navy);
+
+  --ring-avatar: 0 0 0 4px var(--paper), 0 0 0 6px var(--navy);
+  --shadow-glass: 0 1px 8px var(--navy-a08);
+  --shadow-card: 0 2px 16px var(--navy-a08);
+  --shadow-lift: 0 8px 32px var(--navy-a12);
+
+  color-scheme: light;
+}
+
+/* ---- Manual dark: force dark even on a light system -------- */
+[data-theme='dark'] {
+  --surface-page: var(--dk-surface-page);
+  --surface-card: var(--dk-surface-card);
+  --surface-subtle: var(--dk-surface-subtle);
+  --surface-glass: var(--dk-surface-glass);
+
+  --text-primary: var(--dk-text-primary);
+  --text-secondary: var(--dk-text-secondary);
+  --text-subtitle: var(--dk-text-subtitle);
+  --text-on-navy: var(--dk-text-on-navy);
+  --link: var(--dk-link);
+
+  --border-hairline: var(--dk-border-hairline);
+  --border-ink: var(--dk-border-ink);
+  --border-glass: var(--dk-border-glass);
+
+  --hover-tint: var(--dk-hover-tint);
+
+  --btn-primary-bg: var(--dk-btn-primary-bg);
+  --btn-primary-fg: var(--dk-btn-primary-fg);
+  --btn-outline-fg: var(--dk-btn-outline-fg);
+  --btn-outline-border: var(--dk-btn-outline-border);
+  --nav-active-bg: var(--dk-nav-active-bg);
+  --nav-active-fg: var(--dk-nav-active-fg);
+  --nav-link-fg: var(--dk-nav-link-fg);
+  --tag-fg: var(--dk-tag-fg);
+  --social-fg: var(--dk-social-fg);
+  --social-fg-hover: var(--dk-social-fg-hover);
+
+  --ring-avatar: var(--dk-ring-avatar);
+  --shadow-glass: var(--dk-shadow-glass);
+  --shadow-card: var(--dk-shadow-card);
+  --shadow-lift: var(--dk-shadow-lift);
+
+  color-scheme: dark;
+}
+
+/* ---- Text gradient ---------------------------------------- */
+/* Navy→navy is invisible on dark; lift it to sky→cream. Same
+   ordering logic: media first, explicit light/dark after. */
+@media (prefers-color-scheme: dark) {
+  :root .text-gradient {
+    background: linear-gradient(135deg, #86b6f0 0%, #f4f1ec 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+[data-theme='light'] .text-gradient {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-bright) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+[data-theme='dark'] .text-gradient {
+  background: linear-gradient(135deg, #86b6f0 0%, #f4f1ec 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}

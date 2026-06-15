@@ -8,7 +8,7 @@ export function Tag({ children, ...rest }) {
   const style = {
     display: 'inline-block',
     backgroundColor: 'var(--surface-subtle)',
-    color: 'var(--navy)',
+    color: 'var(--tag-fg)',
     fontFamily: 'var(--font-ui)',
     fontSize: 'var(--text-meta)',
     fontWeight: 'var(--weight-regular)',

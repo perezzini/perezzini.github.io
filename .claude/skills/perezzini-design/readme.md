@@ -46,6 +46,19 @@ How the brand writes.
 
 ---
 
+## Dark mode — "Warm Midnight"
+
+The palette inverted, not reinvented. The brand stays monochrome: one canvas, one ink, one accent.
+
+- **Canvas = brand navy `#01377d`.** The color that is *ink* in light mode becomes the *page* in dark — a literal inversion. It stays flat (the brand has no cards on the real site); raised surfaces lift to `#0f4a98`.
+- **Ink = warm off-white `#f4f1ec`.** Echoes the cream paper so the theme still feels like *this* brand, not a generic dark mode. Secondary text is a muted blue-gray `#b9c6db`.
+- **Accent flips to cream.** In light mode the accent is navy; on a navy canvas the primary button becomes a **cream fill with navy text** (monochrome invert). Links glow in **sky `#86b6f0`**.
+- **Avatar ring** inverts to a navy gap + cream halo. **Shadows** switch from navy tints to true-black depth (they need to read against the dark canvas).
+- **Activation (both):** manual `<html data-theme="dark">` (the moon/sun toggle persists it to `localStorage['perezzini-theme']`), and automatic via `prefers-color-scheme: dark` *unless* the user has explicitly chosen `data-theme="light"`.
+- **Implementation:** `tokens/dark.css` defines values once as `--dk-*` and maps them onto the semantic aliases under both the attribute and media-query scopes — so components that read `--surface-page`, `--btn-primary-bg`, `--link`, etc. theme automatically with zero per-component dark CSS. See the **Light / Dark** brand card and the **Dark — Canvas & Ink** color card.
+
+---
+
 ## Iconography
 
 - **System:** **Font Awesome 6.7.2**, loaded from CDN (`cdnjs`). This is the brand's only icon set.
@@ -68,6 +81,7 @@ Root manifest of this design system.
   - `colors.css` — navy / paper / gray palette + semantic aliases.
   - `typography.css` — Prata family, type scale, line-heights, tracking.
   - `spacing.css` — spacing scale, pill/card radii, navy-tinted shadows, motion tokens.
+  - `dark.css` — the "Warm Midnight" dark theme: `--dk-*` values mapped onto the semantic aliases under `[data-theme="dark"]` and `prefers-color-scheme`.
   - `base.css` — element defaults (paper bg, Prata, navy ink) + `.text-gradient`.
 - **`components/core/`** — reusable primitives (`.jsx` + `.d.ts` + `.prompt.md`):
   - `Button` · `Tag` · `Avatar` · `SocialIcon` · `NavPill` · `BlogCard`
