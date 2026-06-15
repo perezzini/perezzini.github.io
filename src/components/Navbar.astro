@@ -1,4 +1,6 @@
 ---
+import DarkModeToggle from './DarkModeToggle.astro'
+
 const { pathname } = Astro.url
 const p = pathname.replace(/\/$/, '') || '/'
 const isHome = p === '/'
@@ -12,4 +14,5 @@ const isPubs = p === '/publications'
   <a href="/publications" class={`nav-link${isPubs ? ' active' : ''}`}
     >Academic publications</a
   >
+  <DarkModeToggle />
 </nav>
