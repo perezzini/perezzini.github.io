@@ -152,11 +152,11 @@ Your site is **Astro**; the skill's `.jsx` files are **React reference contracts
 - The 640px single-column layout, the center-aligned home copy / left-aligned long-form bodies.
 - Copy, i18n strings (`src/i18n`), publication formatting, accented characters.
 - The fade-up / reveal motion (just re-point its durations to `--dur-base`).
-- **No new colors, no new fonts, no bold weight, no dark theme** unless separately requested.
+- **No new colors, no new fonts, no bold weight.** (Dark mode is now in-scope — see §8.)
 
 ---
 
-## 7. Acceptance check
+## 7. Acceptance check (light migration)
 
 - [ ] No `fonts.googleapis.com` / `gstatic.com` request in the Network tab; Prata loads from `/fonts/Prata-Regular.ttf`.
 - [ ] `grep -nE '#01377d|#f0ede8|#6e6e73|#f5f5f7|#d2d2d7|#4a6f94|#1a6abf' src/styles/global.css` returns **nothing** (all moved to tokens).
@@ -164,3 +164,139 @@ Your site is **Astro**; the skill's `.jsx` files are **React reference contracts
 - [ ] Landing hero name renders in **navy**, not black; no synthetic-bold Prata anywhere.
 - [ ] Landing page visually equals `templates/portfolio/Portfolio.dc.html`.
 - [ ] Diff is token/weight/color swaps only — no structural or copy changes.
+
+---
+
+## 8. Dark mode — "Warm Midnight"
+
+Adds the design system's dark theme to the live site. The palette inverts (brand navy `#01377d` becomes the canvas, warm off-white the ink) and stays monochrome. This section is self-contained — do it after §1–7.
+
+> **Why your current dark toggle won't "just work":** two mismatches.
+> 1. `DarkModeToggle.astro` toggles a `.dark` **class**; the system's `dark.css` keys off the `[data-theme]` **attribute**.
+> 2. Your `@layer components` CSS hardcodes **base** tokens (`var(--navy)`, `var(--white)`, `var(--gray)`). `dark.css` only flips **semantic/component** aliases — so `.nav-link { color: var(--navy) }` stays navy-on-navy (invisible) in dark. Every colored component must move to the themable token.
+
+### 8.1 — Copy the dark token file
+
+```bash
+cp .claude/skills/perezzini-design/tokens/dark.css src/styles/ds/dark.css
+# Re-copy colors.css too — it now ships the component tokens dark.css depends on:
+cp .claude/skills/perezzini-design/tokens/colors.css src/styles/ds/colors.css
+```
+
+`colors.css` now declares the themable component tokens (`--btn-primary-bg`, `--btn-primary-fg`, `--btn-outline-fg`, `--btn-outline-border`, `--nav-active-bg`, `--nav-active-fg`, `--nav-link-fg`, `--tag-fg`, `--social-fg`, `--social-fg-hover`) with their light defaults. `dark.css` defines `--dk-*` values and maps them onto the semantic + component aliases under `[data-theme='dark']`, `[data-theme='light']`, and a `prefers-color-scheme` fallback.
+
+**`src/styles/global.css`** — import it last in the token block:
+
+```css
+@import './ds/colors.css';
+@import './ds/typography.css';
+@import './ds/spacing.css';
+@import './ds/dark.css';   /* add — must come after the others */
+```
+
+### 8.2 — Switch element + component colors to themable tokens
+
+These currently use **base** tokens and so won't flip. Find & replace inside `global.css`:
+
+**`@layer base`:**
+
+| Selector / prop | From | To |
+|---|---|---|
+| `html` background | `var(--paper)` | `var(--surface-page)` |
+| `html` color | `var(--navy)` | `var(--text-primary)` |
+| `a` color | `var(--navy)` | `var(--link)` |
+| `p` color | `var(--gray)` | `var(--text-secondary)` |
+| `p.secondary` color | `var(--gray)` | `var(--text-secondary)` |
+| `.home p` color | `var(--navy)` | `var(--text-primary)` |
+| `.home p.secondary` color | `var(--gray)` | `var(--text-secondary)` |
+| `h2` color | `var(--navy)` | `var(--text-primary)` |
+
+**`@layer components`:**
+
+| Selector / prop | From | To |
+|---|---|---|
+| `.nav-link` color | `var(--navy)` | `var(--nav-link-fg)` |
+| `.nav-link.active` background | `var(--navy)` | `var(--nav-active-bg)` |
+| `.nav-link.active` color | `var(--white)` | `var(--nav-active-fg)` |
+| `.btn-primary` background-color | `var(--navy)` | `var(--btn-primary-bg)` |
+| `.btn-primary` color | `var(--white)` | `var(--btn-primary-fg)` |
+| `.btn-primary` border-color | `var(--navy)` | `var(--btn-primary-bg)` |
+| `.btn-outline` color | `var(--navy)` | `var(--btn-outline-fg)` |
+| `.btn-outline` border-color | `var(--navy)` | `var(--btn-outline-border)` |
+| `.social-link` color | `var(--gray)` | `var(--social-fg)` |
+| `.social-link:hover` color | `var(--navy)` | `var(--social-fg-hover)` |
+| `.tag` color | `var(--navy)` | `var(--tag-fg)` |
+| `.publications li` + `::before` color | `var(--gray)` | `var(--text-secondary)` |
+| `.blog-preview-date` color | `var(--gray)` | `var(--text-secondary)` |
+| `.blog-preview-title` color | `var(--navy)` | `var(--text-primary)` |
+| `.blog-preview-title a` (+`:hover`) color | `var(--navy)` | `var(--link)` |
+| `.blog-preview-desc` color | `var(--gray)` | `var(--text-secondary)` |
+| `.blog-back-link` color | `var(--navy)` | `var(--link)` |
+| `.blog-post-title` color | `var(--navy)` | `var(--text-primary)` |
+| `.blog-list-title` color | `var(--navy)` | `var(--text-primary)` |
+
+Leave `.site-nav` as-is — it already uses `--surface-glass` / `--border-glass` / `--shadow-glass`, which `dark.css` themes (the glass capsule gets a lighter frosted-navy fill + a visible cream hairline in dark, so the bar reads clearly).
+
+The `.text-gradient` utility is overridden by `dark.css` automatically (navy→navy is invisible on dark; it lifts to sky→cream). No change needed.
+
+### 8.3 — Prevent the flash (FOUC)
+
+**`src/layouts/BaseLayout.astro`** — add this as the **first** thing in `<head>`, before the stylesheet import, so the theme is set before first paint:
+
+```astro
+<script is:inline>
+  (function () {
+    var stored = localStorage.getItem('theme')
+    var sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    document.documentElement.dataset.theme = stored || (sysDark ? 'dark' : 'light')
+  })()
+</script>
+```
+
+This resolves the system preference into an explicit `data-theme` on `<html>` (so the `[data-theme]` rules drive everything; the `@media` block in `dark.css` stays as a no-JS fallback).
+
+### 8.4 — Rewire the toggle to `data-theme`
+
+**`src/components/DarkModeToggle.astro`** — replace the `<script>` so it flips the **attribute** instead of the `.dark` class (keep the button markup and `localStorage['theme']` key):
+
+```astro
+<script>
+  const toggle = document.getElementById('darkToggle')
+  const html = document.documentElement
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const next = html.dataset.theme === 'dark' ? 'light' : 'dark'
+      html.dataset.theme = next
+      localStorage.setItem('theme', next)
+    })
+  }
+</script>
+```
+
+Add a scoped `<style>` so only the relevant icon shows (the markup has both `.dark-icon-moon` and `.dark-icon-sun`):
+
+```astro
+<style>
+  .dark-icon-sun { display: none; }
+  :global([data-theme='dark']) .dark-icon-moon { display: none; }
+  :global([data-theme='dark']) .dark-icon-sun { display: inline; }
+  .dark-toggle {
+    background: var(--surface-glass);
+    color: var(--text-primary);
+    border: 1px solid var(--border-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+</style>
+```
+
+> **Search the repo for any leftover `.dark`-class CSS or JS** (`grep -rn "\.dark\b\|classList.*dark\|'dark'" src`) and migrate it to `[data-theme='dark']` so nothing depends on the old class.
+
+### 8.5 — Dark-mode acceptance check
+
+- [ ] First paint already correct (no light flash) when `localStorage['theme']` / system pref is dark.
+- [ ] Toggle flips `<html data-theme>` between `light`/`dark` and persists to `localStorage['theme']`; moon shows in light, sun in dark.
+- [ ] In dark: canvas is navy `#01377d`, text is off-white, primary button is **cream fill / navy text**, links are sky.
+- [ ] Nav capsule is clearly visible in dark (frosted navy + cream hairline); **no** nav link or title renders navy-on-navy.
+- [ ] `grep -nE 'var\(--navy\)|var\(--white\)|var\(--gray\)' src/styles/global.css` shows these **only** inside `:root`/token files — every component/element color now uses a semantic/component token.
+- [ ] Light mode unchanged from §7.

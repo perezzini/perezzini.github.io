@@ -39,14 +39,14 @@ export function Button({
 
   const variants = {
     primary: {
-      backgroundColor: 'var(--navy)',
-      color: 'var(--text-on-navy)',
-      borderColor: 'var(--navy)',
+      backgroundColor: 'var(--btn-primary-bg)',
+      color: 'var(--btn-primary-fg)',
+      borderColor: 'var(--btn-primary-bg)',
     },
     outline: {
       backgroundColor: 'transparent',
-      color: 'var(--navy)',
-      borderColor: 'var(--navy)',
+      color: 'var(--btn-outline-fg)',
+      borderColor: 'var(--btn-outline-border)',
     },
   }
 

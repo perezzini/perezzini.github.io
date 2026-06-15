@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":3,"namespace":"PerezziniDesignSystem_33c6f1","components":[{"name":"Avatar","sourcePath":"components/core/Avatar.jsx"},{"name":"BlogCard","sourcePath":"components/core/BlogCard.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"NavPill","sourcePath":"components/core/NavPill.jsx"},{"name":"SocialIcon","sourcePath":"components/core/SocialIcon.jsx"},{"name":"Tag","sourcePath":"components/core/Tag.jsx"}],"sourceHashes":{"components/core/Avatar.jsx":"576a0abba3d7","components/core/BlogCard.jsx":"f093792858b1","components/core/Button.jsx":"9f39cafae4ad","components/core/NavPill.jsx":"f34c2ee9270d","components/core/SocialIcon.jsx":"8c7953fea7f7","components/core/Tag.jsx":"6b755669c1c4","ui_kits/website/EssayPost.jsx":"e4787c6acba2","ui_kits/website/Essays.jsx":"f570f2c36892","ui_kits/website/Home.jsx":"7f458c3d47f8","ui_kits/website/Publications.jsx":"fd1db54a5c8c"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":3,"namespace":"PerezziniDesignSystem_33c6f1","components":[{"name":"Avatar","sourcePath":"components/core/Avatar.jsx"},{"name":"BlogCard","sourcePath":"components/core/BlogCard.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"NavPill","sourcePath":"components/core/NavPill.jsx"},{"name":"SocialIcon","sourcePath":"components/core/SocialIcon.jsx"},{"name":"Tag","sourcePath":"components/core/Tag.jsx"}],"sourceHashes":{"components/core/Avatar.jsx":"576a0abba3d7","components/core/BlogCard.jsx":"2fec2b3eba93","components/core/Button.jsx":"324385a4da57","components/core/NavPill.jsx":"e4bc80e85ee4","components/core/SocialIcon.jsx":"52d3d3dddf03","components/core/Tag.jsx":"e2e0d53107e8","ui_kits/website/EssayPost.jsx":"e4787c6acba2","ui_kits/website/Essays.jsx":"f570f2c36892","ui_kits/website/Home.jsx":"7f458c3d47f8","ui_kits/website/Publications.jsx":"fd1db54a5c8c"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -77,7 +77,7 @@ function BlogCard({
     style: {
       fontSize: 'var(--text-body)',
       fontWeight: 'var(--weight-regular)',
-      color: 'var(--navy)',
+      color: 'var(--link)',
       letterSpacing: 'var(--tracking-tight)',
       textDecoration: hover ? 'underline' : 'none',
       textUnderlineOffset: '2px'
@@ -136,14 +136,14 @@ function Button({
   };
   const variants = {
     primary: {
-      backgroundColor: 'var(--navy)',
-      color: 'var(--text-on-navy)',
-      borderColor: 'var(--navy)'
+      backgroundColor: 'var(--btn-primary-bg)',
+      color: 'var(--btn-primary-fg)',
+      borderColor: 'var(--btn-primary-bg)'
     },
     outline: {
       backgroundColor: 'transparent',
-      color: 'var(--navy)',
-      borderColor: 'var(--navy)'
+      color: 'var(--btn-outline-fg)',
+      borderColor: 'var(--btn-outline-border)'
     }
   };
   const style = {
@@ -225,8 +225,8 @@ function NavLink({
     fontWeight: 'var(--weight-regular)',
     textDecoration: 'none',
     lineHeight: 1.3,
-    color: active ? 'var(--text-on-navy)' : 'var(--navy)',
-    background: active ? 'var(--navy)' : hover ? 'var(--hover-tint)' : 'transparent',
+    color: active ? 'var(--nav-active-fg)' : 'var(--nav-link-fg)',
+    background: active ? 'var(--nav-active-bg)' : hover ? 'var(--hover-tint)' : 'transparent',
     transition: 'background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out)'
   };
   return /*#__PURE__*/React.createElement("a", {
@@ -255,7 +255,7 @@ function SocialIcon({
 }) {
   const [hover, setHover] = React.useState(false);
   const style = {
-    color: hover ? 'var(--navy)' : 'var(--gray)',
+    color: hover ? 'var(--social-fg-hover)' : 'var(--social-fg)',
     fontSize: size,
     textDecoration: 'none',
     lineHeight: 1,
@@ -292,7 +292,7 @@ function Tag({
   const style = {
     display: 'inline-block',
     backgroundColor: 'var(--surface-subtle)',
-    color: 'var(--navy)',
+    color: 'var(--tag-fg)',
     fontFamily: 'var(--font-ui)',
     fontSize: 'var(--text-meta)',
     fontWeight: 'var(--weight-regular)',

@@ -47,8 +47,12 @@ function NavLink({ item, active }) {
     fontWeight: 'var(--weight-regular)',
     textDecoration: 'none',
     lineHeight: 1.3,
-    color: active ? 'var(--text-on-navy)' : 'var(--navy)',
-    background: active ? 'var(--navy)' : hover ? 'var(--hover-tint)' : 'transparent',
+    color: active ? 'var(--nav-active-fg)' : 'var(--nav-link-fg)',
+    background: active
+      ? 'var(--nav-active-bg)'
+      : hover
+        ? 'var(--hover-tint)'
+        : 'transparent',
     transition: 'background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out)',
   }
   return (
