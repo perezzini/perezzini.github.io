@@ -22,7 +22,12 @@
   --dk-surface-page: #01377d; /* brand navy — the canvas         */
   --dk-surface-card: #0f4a98; /* raised navy (cards, wells)      */
   --dk-surface-subtle: #0a3f86; /* tags / chips                  */
-  --dk-surface-glass: rgba(15, 74, 152, 0.62); /* raised frosted navy — reads as a distinct capsule on the canvas */
+  --dk-surface-glass: rgba(
+    15,
+    74,
+    152,
+    0.62
+  ); /* raised frosted navy — reads as a distinct capsule on the canvas */
 
   /* text */
   --dk-text-primary: #f4f1ec; /* warm off-white — echoes paper   */
@@ -34,7 +39,12 @@
   /* borders */
   --dk-border-hairline: rgba(244, 241, 236, 0.16);
   --dk-border-ink: #f4f1ec;
-  --dk-border-glass: rgba(244, 241, 236, 0.32); /* cream hairline — visible on navy */
+  --dk-border-glass: rgba(
+    244,
+    241,
+    236,
+    0.32
+  ); /* cream hairline — visible on navy */
 
   /* hover */
   --dk-hover-tint: rgba(244, 241, 236, 0.1);
