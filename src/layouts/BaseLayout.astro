@@ -16,6 +16,14 @@ const {
 <!doctype html>
 <html lang="en">
   <head>
+    <script is:inline>
+      ;(function () {
+        var stored = localStorage.getItem('theme')
+        var sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+        document.documentElement.dataset.theme =
+          stored || (sysDark ? 'dark' : 'light')
+      })()
+    </script>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

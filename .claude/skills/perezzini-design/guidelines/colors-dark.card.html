@@ -1,0 +1,50 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Dark — Canvas & Ink" subtitle="Warm Midnight: brand navy canvas, warm off-white ink" -->
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        background: var(--surface-page);
+        display: flex;
+        gap: 14px;
+      }
+      .swatch {
+        flex: 1;
+        height: 110px;
+        border-radius: var(--radius-sm);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 12px;
+        box-sizing: border-box;
+        border: 1px solid var(--border-hairline);
+      }
+      .name {
+        font-size: 14px;
+        line-height: 1.3;
+      }
+      .hex {
+        font-size: 12px;
+        opacity: 0.85;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="swatch" style="background: var(--dk-surface-page)">
+      <span class="name" style="color: #f4f1ec">Canvas</span><span class="hex" style="color: #f4f1ec">#01377D · navy</span>
+    </div>
+    <div class="swatch" style="background: var(--dk-surface-card)">
+      <span class="name" style="color: #f4f1ec">Raised</span><span class="hex" style="color: #f4f1ec">#0F4A98</span>
+    </div>
+    <div class="swatch" style="background: var(--dk-text-primary)">
+      <span class="name" style="color: #01377d">Ink</span><span class="hex" style="color: #01377d">#F4F1EC · off-white</span>
+    </div>
+    <div class="swatch" style="background: var(--dk-link)">
+      <span class="name" style="color: #01377d">Link</span><span class="hex" style="color: #01377d">#86B6F0 · sky</span>
+    </div>
+  </body>
+</html>

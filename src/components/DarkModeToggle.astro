@@ -6,15 +6,49 @@
 <script>
   const toggle = document.getElementById('darkToggle')
   const html = document.documentElement
-
-  function applyTheme(isDark) {
-    html.classList.toggle('dark', isDark)
-    localStorage.setItem('theme', isDark ? 'dark' : 'light')
-  }
-
   if (toggle) {
     toggle.addEventListener('click', () => {
-      applyTheme(!html.classList.contains('dark'))
+      const next = html.dataset.theme === 'dark' ? 'light' : 'dark'
+      html.dataset.theme = next
+      localStorage.setItem('theme', next)
     })
   }
 </script>
+
+<style>
+  .dark-icon-sun {
+    display: none;
+  }
+  :global([data-theme='dark']) .dark-icon-moon {
+    display: none;
+  }
+  :global([data-theme='dark']) .dark-icon-sun {
+    display: inline;
+  }
+  .dark-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface-glass);
+    color: var(--text-primary);
+    border: 1px solid var(--border-glass);
+    border-radius: 50%;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-glass);
+    cursor: pointer;
+    font-size: 14px;
+    transition:
+      background var(--dur-fast) var(--ease-out),
+      color var(--dur-fast) var(--ease-out);
+  }
+  .dark-toggle:hover {
+    background: var(--hover-tint);
+  }
+</style>

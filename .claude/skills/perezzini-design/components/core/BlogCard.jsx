@@ -26,7 +26,7 @@ export function BlogCard({ title, description, date, href = '#', ...rest }) {
           style={{
             fontSize: 'var(--text-body)',
             fontWeight: 'var(--weight-regular)',
-            color: 'var(--navy)',
+            color: 'var(--link)',
             letterSpacing: 'var(--tracking-tight)',
             textDecoration: hover ? 'underline' : 'none',
             textUnderlineOffset: '2px',

@@ -16,13 +16,14 @@ If the user invokes this skill without any other guidance, ask them what they wa
 - **One accent:** navy `#01377d` on warm cream paper `#f0ede8`. Secondary text Apple gray `#6e6e73`.
 - **Pill chrome:** nav, buttons, and tags are fully rounded (`980px`). Avatars are circles with a navy halo ring.
 - **Quiet motion:** 400ms fade-up entrances, 150ms color transitions, navy-tinted soft shadows. No bounce, no neutral-black shadow.
+- **Dark mode ("Warm Midnight"):** palette inverts — brand navy `#01377d` becomes the canvas, warm off-white the ink, accent flips to cream. Activated by `[data-theme="dark"]` or system preference; defined in `tokens/dark.css`. To add it to the live Astro site, follow `MIGRATION.md` §8.
 - **Voice:** third-person, sentence case, em-dash-jointed, precise, no emoji.
 - **Icons:** Font Awesome 6.7.2 (CDN), used sparingly with labels.
 
 ## Files
 
 - `styles.css` — link this; it `@import`s all tokens + fonts + base.
-- `tokens/` — colors, typography, spacing, fonts, base element styles.
+- `tokens/` — colors, typography, spacing, fonts, base element styles, **dark.css** (Warm Midnight dark theme).
 - `components/core/` — Button, Tag, Avatar, SocialIcon, NavPill, BlogCard.
 - `ui_kits/website/` — full portfolio recreation (Home, Essays, EssayPost, Publications).
 - `assets/` — portrait, favicon, affiliation logos, Prata font binary.

@@ -31,6 +31,51 @@
     <script type="text/babel">
       const { NavPill } = window.PerezziniDesignSystem_33c6f1
 
+      const THEME_KEY = 'perezzini-theme'
+
+      function ThemeToggle() {
+        const [theme, setTheme] = React.useState(
+          () => localStorage.getItem(THEME_KEY) || 'light'
+        )
+        React.useEffect(() => {
+          document.documentElement.dataset.theme = theme
+          localStorage.setItem(THEME_KEY, theme)
+        }, [theme])
+        const dark = theme === 'dark'
+        return (
+          <button
+            aria-label="Toggle dark mode"
+            onClick={() => setTheme(dark ? 'light' : 'dark')}
+            style={{
+              position: 'fixed',
+              top: 22,
+              right: 24,
+              zIndex: 1001,
+              width: 38,
+              height: 38,
+              borderRadius: 'var(--radius-full)',
+              border: '1px solid var(--border-glass)',
+              background: 'var(--surface-glass)',
+              backdropFilter: 'blur(16px)',
+              WebkitBackdropFilter: 'blur(16px)',
+              boxShadow: 'var(--shadow-glass)',
+              color: 'var(--text-primary)',
+              cursor: 'pointer',
+              fontSize: 15,
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              transition: 'color var(--dur-fast), background var(--dur-fast)',
+            }}
+          >
+            <i
+              className={dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon'}
+              aria-hidden="true"
+            ></i>
+          </button>
+        )
+      }
+
       function App() {
         const [route, setRoute] = React.useState('home')
 
@@ -85,8 +130,8 @@
                       fontFamily: 'var(--font-ui)',
                       fontSize: 'var(--text-meta)',
                       textDecoration: 'none',
-                      color: active ? 'var(--text-on-navy)' : 'var(--navy)',
-                      background: active ? 'var(--navy)' : 'transparent',
+                      color: active ? 'var(--nav-active-fg)' : 'var(--nav-link-fg)',
+                      background: active ? 'var(--nav-active-bg)' : 'transparent',
                       transition: 'background var(--dur-fast), color var(--dur-fast)',
                     }}
                   >
@@ -109,6 +154,7 @@
         return (
           <div>
             <Nav />
+            <ThemeToggle />
             {screen}
           </div>
         )
