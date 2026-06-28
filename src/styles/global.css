@@ -13,10 +13,6 @@
 @import './ds/colors.css';
 @import './ds/typography.css';
 @import './ds/spacing.css';
-@import './ds/dark.css';
-
-@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
-
 @theme {
   --color-apple-blue: var(--navy);
   --color-apple-light: var(--surface-light);

@@ -46,7 +46,7 @@
 
   --hover-tint: var(--navy-a06); /* nav-link / ghost hover bg    */
 
-  /* --- Component tokens (themable; flipped in dark.css) -- */
+  /* --- Component tokens --- */
   --btn-primary-bg: var(--navy);
   --btn-primary-fg: var(--white);
   --btn-outline-fg: var(--navy);
