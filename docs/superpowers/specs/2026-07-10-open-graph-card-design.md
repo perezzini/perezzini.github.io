@@ -94,15 +94,13 @@ added later if one is.
 ### Canonical domain
 
 All absolute URLs use `https://perezzini.com` — the site's custom domain — **not** the
-`perezzini.github.io` Pages URL. Two related items sit **outside this OG change** and are flagged
-for the owner:
+`perezzini.github.io` Pages URL. Two related fixes ride this branch:
 
-- `astro.config.mjs` still sets `site: 'https://perezzini.github.io'`, so Astro-generated absolute
-  URLs (canonical links, sitemap, RSS) point at the wrong host. Recommend updating it to
-  `https://perezzini.com`; it is small and closely related, so it can ride this branch if wanted.
-- No `public/CNAME` file exists. GitHub Pages Actions deploys need one to keep the custom domain
-  pinned across deploys; confirm the domain is set in repo settings, or add `public/CNAME`
-  containing `perezzini.com`.
+- `astro.config.mjs` `site` is updated from `https://perezzini.github.io` to
+  `https://perezzini.com`, so Astro-generated absolute URLs (canonical links, sitemap, RSS)
+  resolve to the right host.
+- `public/CNAME` (containing `perezzini.com`) is added so GitHub Pages Actions deploys keep the
+  custom domain pinned across deploys.
 
 ## Files touched
 
