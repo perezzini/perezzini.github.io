@@ -2,13 +2,11 @@
 const { pathname } = Astro.url
 const p = pathname.replace(/\/$/, '') || '/'
 const isHome = p === '/'
-const isEssays = p.startsWith('/essays')
 const isPubs = p === '/publications'
 ---
 
 <nav class="site-nav">
   <a href="/" class={`nav-link${isHome ? ' active' : ''}`}>Home</a>
-  <a href="/essays" class={`nav-link${isEssays ? ' active' : ''}`}>Essays</a>
   <a href="/publications" class={`nav-link${isPubs ? ' active' : ''}`}
     >Academic publications</a
   >
